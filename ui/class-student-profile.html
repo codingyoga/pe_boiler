@@ -1,0 +1,933 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PARENT EYE</title>
+ <style>
+ #trans-inf h3{
+	 margin-bottom:15px;}
+ #fee-inf h3{
+	 margin-bottom:15px;}
+ #academic-inf img{
+	 margin-top:20px;}
+	#dataTables-example2_length{
+		display:none;}
+	.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+	
+	.card-header {
+    box-shadow: 0 10px 30px -12px rgba(0,0,0,.42),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
+    margin: -20px 15px 0;
+    border-radius: 3px;
+    padding: 15px;
+}
+	
+	
+	.card-header2 {
+    box-shadow: 0 10px 30px -12px rgba(0,0,0,.42),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
+    margin: -33px 0px 0;
+    border-radius: 3px;
+    padding: 8px;
+}
+
+	.wrap {
+  position: absolute;
+  overflow: hidden;
+  top: 10%;
+  right: 10%;
+  bottom: 85px;
+  left: 10%;
+  padding: 20px 50px;
+  display: block;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  visibility: hidden;
+}
+.wrap .content {
+  opacity: 0;
+}
+.wrap:before {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  top: 95%;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active {
+  display: block;
+  visibility: visible;
+  box-shadow: 2px 3px 16px silver;
+  transition: all 600ms;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+.wrap.active:before {
+  height: 2000px;
+  width: 2000px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  display: block;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active .content {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+a.button {
+  padding: 11px 11px 13px 13px;
+  outline: none;
+  border-radius: 50%;
+  background: #007fed;
+  color: #fff;
+  font-size: 24px;
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  margin-left: -25px;
+  transition: transform 0.25s;
+}
+a.button:hover {
+  text-decoration: none;
+  background: #2198ff;
+}
+a.button.active {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+.nav-tabs > li > a{
+	background-color:#f36b5b !important;
+	color:#fff;}
+.nav-tabs{
+	border-bottom:none !important;}
+.add-na p{
+	margin:0;
+	padding:0;}
+.name-imag img{
+	width:10%;
+	margin-right:15px;}
+	</style>
+    
+
+	<link rel="shortcut icon" href="assets/img/favi.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Main Styles-->
+    <link href="assets/css/parenteye-main.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/parenteye-media.css" rel="stylesheet" type="text/css">
+   
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://resources/demos/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><img src="assets/img/logo.png" class="img-responsive" class="img-responsive"></strong></a>
+                
+                
+                
+                
+				
+		<div id="sideNav" href="">
+		<i class="fa fa-bars icon"></i> 
+		</div>
+            </div>
+            
+            
+            
+            <div class="col-md-6 head-namer">
+            <h3>St.Mary's English Medium School</h3>    
+            </div>
+
+			
+            <ul class="nav navbar-top-links navbar-right">
+                
+               <li class="tim"> <span id="date_time">Friday August 25 2017 10:22:08</span></li>
+               
+                <li class="dropdown">
+                
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                       
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+   
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li style="text-align:center;">
+                        <a class="active-menu" href="#" style="text-align:center; background-color:#3e3e3e !important;">Student Profile</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="#" href="index.html"><i class="fa fa-sitemap"></i> Communication<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="diary.html">Diary</a>
+                            </li>
+                            <li>
+                                <a href="message.html">Message</a>
+                            </li>
+                            
+                            <li>
+                                <a href="homework.html">Homework</a>
+                            </li>
+                            
+                            <li>
+                                <a href="notice-board.html">Notice Board</a>
+                            </li>
+                            
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Attendance<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="attendance.html">Attenandnace</a>
+                            </li>
+                            <li>
+                                <a href="attendance-report.html">Attendance Report</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Academic<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="mark-entry.html">Markentry</a>
+                            </li>
+                            <li>
+                                <a href="progress-report.html">Progress Report</a>
+                            </li>
+                            <li>
+                                <a href="exam-timetable.html">Exam Time Table</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>School Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="student-management.html">Student Management</a>
+                            </li>
+                            <li>
+                                <a href="class-management.html">Class Management</a>
+                            </li>
+                            
+                             <li>
+                                <a href="staff-management.html">Staff Management</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Fee Managment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                          
+                            <li>
+                                <a href="#">Fee Collection</a>
+                            </li>
+                            
+                             <li>
+                                <a href="#">Reports</a>
+                            </li>
+                             <li>
+                                <a href="#">Set School Fee</a>
+                            </li>
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                         <li>
+                        <a href="transport.html"><i class="fa fa-desktop"></i>  Transport Management  </a>
+                    </li> 
+                    
+                    
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  Export /Import  </a>
+                    </li> 
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  User Management   </a>
+                    </li> 
+                   
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+     <div class="header"> 
+        
+        			
+        
+                        <h1 class="page-header">
+                          
+        	<div class="head-mn">
+        	 	<h1>St.Mary's English Medium School</h1>
+        	</div>
+        
+                   
+									
+		</div>
+     
+            <div id="page-inner">
+         
+                <div class="row">
+                
+                	<div class="col-md-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                               
+                               
+                            </div>
+                            
+                            <div class="panel-body">
+                                <div class="list-group text-center frt">
+
+                             
+                                  <div class="col-md-4">
+                                  <div class="name-imag">
+                                     <img src="assets/img/dummy_man.png">Albus Dumbledore
+                                  </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <strong>Phone No&nbsp;:&nbsp;</strong>1234868524
+                                  </div>
+                                  <div class="col-md-4">
+                                  <div class="add-na">
+                                   <p> <strong>Father's Name&nbsp;:&nbsp;</strong>Mr Dumbledore</p>
+                                     <p><strong>Address&nbsp;:&nbsp;</strong>Shacky Couldrum</p>
+                                      </div> 
+                                      </div>
+  
+  
+  
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                
+                </div>
+                
+            <div class="row">
+                
+                	
+                    
+
+                 <div class="col-md-12 ">
+                        <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                        <div class="col-md-10 ">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#result12" data-toggle="tab" aria-expanded="true">Student List</a>
+                                </li>
+                                <li class=""><a href="#leave12" data-toggle="tab" aria-expanded="false">Leaves</a>
+                                </li>
+                                <li class=""><a href="#infor24" data-toggle="tab" aria-expanded="false">Information</a>
+                                </li>
+                                
+                               
+                            </ul>
+
+                            <div class="tab-content" style="margin-top:20px;">
+                                <div class="tab-pane fade active in" id="result12">
+                                    <div class="row"  style="margin-bottom:15px;">
+                                    	<div class="col-md-3">
+
+                                        <select class="form-control input-lg" id="sel1">
+                                        <option>Progress Card </option>
+                                        <option>Nutshell</option>
+                                        <option>View Graph</option>
+                                        </select>
+                                        </div>
+                                        
+                                        <div class="col-md-3">
+                                        	<a style="font-size:37px; color:#333;"><i class="fa fa-file-text" aria-hidden="true"></i>
+</a>
+
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                  
+                                    <div class="row" style="margin-bottom:15px;">
+                               <div class="col-sm-6 text-left">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all"><strong> Scholastic Area</strong></div>
+                               </div>
+                               
+                               
+                               
+                               
+                               
+                            </div>
+                                    <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">Subjects</th><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">	PA1</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 411px;" aria-label="Browser: activate to sort column ascending">SE1</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 373px;" aria-label="Platform(s): activate to sort column ascending"> 	Yearly Exam</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                    		<td class="">English</td>
+                                            <td class="">	E</td>
+                                            <td class=" ">B1</td>
+                                            <td class=" ">C2</td>
+                                         
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA even">
+                                    			<td class="">GK</td>
+                                            <td class="">	NA</td>
+                                            <td class=" ">	NA</td>
+                                            <td class=" ">	NA</td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA odd">
+                                    			<td class="">Art</td>
+                                            <td class="">	NA</td>
+                                            <td class=" ">	NA</td>
+                                            <td class=" ">	NA</td>
+                                            
+                                            
+                                        </tr>
+                                        
+                                            <tr class="gradeA even">
+                                    			<td class="">Hindi</td>
+                                            <td class="">	NA</td>
+                                            <td class=" ">	NA</td>
+                                            <td class=" ">	NA</td>
+                                            
+                                        </tr>
+                                       
+                                        
+                                        </tbody>
+                                </table>
+                                
+                               </div>
+                            </div>
+                          
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="leave12">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    <div class="table-responsive">
+                                <div id="no-more-tables">
+                    <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                		<thead class="cf">
+                			<tr>
+        						<th> Date</th>
+                				<th>Reason</th>
+                				
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr class="gradeA odd">
+                                    		<td class="">12-05-2017</td>
+                                            <td class="">Fever</td>
+                                            
+                                         
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA even">
+                                    		<td class="">12-05-2017</td>
+                                            <td class="">Fever</td>
+                                            
+                                            
+                                        </tr>
+                                        
+            		</tbody>
+            	</table>
+            </div>
+                            </div>
+                                
+
+        
+    
+        
+            
+
+ </div>
+                                
+<div class="tab-pane fade" id="infor24">
+<div  style="margin-bottom:15px;">
+
+ 
+                                    
+                                   
+                                   
+                                   
+                                  <form>
+<div class="form-group">
+<span id="date_time2"></span>
+</div>
+<div class="form-group">
+<label style=""> PhotoUpload</label>
+<input type="file" name="pic" accept="image/*">
+</div>
+<div class="form-group">
+<label style=""> Name of Student </label>
+<input class="form-control" id="name" placeholder="Name of Student" type="text">
+</div>
+
+<div class="form-group">
+<label style=""> Gender</label>
+<select class="form-control" id="sel1">
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+ 
+<div class="form-group">
+<label style="">House/Flat Name</label>
+<input class="form-control" id="housename" placeholder="House/Flat Name" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Street Name</label>
+<input class="form-control" id="streetname" placeholder="Street Name" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Location</label>
+<input class="form-control" id="location" placeholder="Location" type="text">
+</div>
+
+<div class="form-group">
+<label style="width:100%;">Date of Birth</label>
+<input class="form-control" id="datepicker" placeholder="date">
+</div>
+
+<div class="form-group">
+<label style="">Name of Father</label>
+<input class="form-control" id="fathername" placeholder="Name of Father" type="text">
+</div>	
+
+<div class="form-group">
+<label style="">Occupation</label>
+<input class="form-control" id="occupation" placeholder="Occupation" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Name Mother</label>
+<input class="form-control" id="mother-name" placeholder="Name Mother" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Name of guardian</label>
+<input class="form-control" id="guardian-name" placeholder="Name of guardian" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Mobile No</label>
+<input class="form-control" id="mob" placeholder="Mobile No" type="text">
+</div>
+
+<div class="form-group">
+<label style="">E-mail address</label>
+<input class="form-control" id="email-add" placeholder="E-mail address" type="text">
+</div>
+
+
+<div class="form-group">
+<label style=""> Nationality</label>
+<select class="form-control" id="sel1">
+<option>Indian</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> State</label>
+<select class="form-control" id="sel1">
+<option>Kerala</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> District</label>
+<select class="form-control" id="sel1">
+<option>Malappuram</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> Religion</label>
+<select class="form-control" id="sel1">
+<option>Hindu</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> Caste</label>
+<select class="form-control" id="sel1">
+<option>Nair</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> Category</label>
+<select class="form-control" id="sel1">
+<option>General</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style="">Aadhar No</label>
+<input class="form-control" id="adhar-no" placeholder="Aadhar No" type="text">
+</div>
+
+<div class="form-group">
+<label style="width:100%;">Date of Admission with year</label>
+<input class="form-control" id="datepicker9" placeholder="date">
+</div>
+
+<div class="form-group">
+<label style=""> Standard of Admission</label>
+<select class="form-control" id="sel1">
+<option>Lorem</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style="">Previous School Name</label>
+<input class="form-control" id="previus-sch" placeholder="Previous School Name" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Documents</label>
+
+<div class="admi-in-bx">
+	<label style=""> ID Proof</label>
+<input type="file" name="idprf" >
+<label style=""> Previous School documents</label>
+<input type="file" name="prevdoc">
+<label style=""> Passport</label>
+<input type="file" name="passpo">
+<label style=""> Other Documents </label>
+<input type="file" name="other">
+<input type="file" name="other">
+<input type="file" name="other">
+<input type="file" name="other">
+</div>
+
+</div>
+
+
+<div class="form-group">
+<label style="">Identification Marks</label>
+<textarea class="form-control " rows="5" id="" name="idmarks" placeholder="Type Identification Marks..."></textarea>
+</div>
+
+<div class="form-group">
+<button type="button" class="btn btn-primary">Admit</button>&nbsp;<button type="button" class="btn btn-primary">Clear</button>
+</div>
+</form>
+                                 
+                                 </div>
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+          
+                </div> 
+
+               
+ 
+		
+				<footer><p>@2017 All rights are reserved  <a href="">Scientia Innovation Pvt Ltd</a></p>
+
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+	 <script>
+    $('.asd').on('click', function(){
+  $('.wrap, .asd').toggleClass('active');
+  
+  return false;
+});
+</script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    
+  
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+
+  
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+function date_time(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time');</script>
+ 
+ <script>
+
+function date_time2(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time2("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time2');</script>
+ 
+ 
+ 
+
+ 
+ 
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#datepickerqqq" ).datepicker();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+   
+  <script>
+  $('#myModalq1').on('hidden.bs.modal', function (e) {
+  // do something...
+})
+  </script>
+  
+  
+   <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+    rel="stylesheet" type="text/css" />
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+    type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('.lstFruits20').multiselect({
+            includeSelectAllOption: true
+        });
+    });
+</script>
+
+</script>
+
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+
+ <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+   
+      <script>
+            $(document).ready(function () {
+                $('#dataTables-example2').dataTable();
+            });
+    </script>
+    
+    
+
+
+</body>
+
+</html>

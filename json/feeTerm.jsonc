@@ -1,0 +1,15 @@
+[
+    {
+            "term_name": "T 1",
+            "start_date": "2019-04-09",
+            "end_date": "2019-04-09",
+            "terms_details": [
+            {
+                "term_month": 1,
+                "discount": "10",
+            },
+            {
+                "term_month": 2,
+                "discount": "200",
+            }
+    ]

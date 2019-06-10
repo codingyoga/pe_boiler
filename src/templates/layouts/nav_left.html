@@ -1,0 +1,134 @@
+<!--/. NAV TOP  -->
+<nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+            <div class="user-pro-wrap">
+                <div class="user-profile-thumb text-center">
+                    <div class="user-i">
+                        <img alt="" class="rad-full mb-1" src="{{ url_for('static', filename='test_img/dummy_man.png') }}" width="100" height="100">
+                        <div>
+                            <span>{{ session['name'] }}</span>
+
+                        </div>
+                        <div>
+
+                            <span style="font-weight:normal;">{{ session['user_type'] }}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- <li>
+                <a href="#" href="index.html"><i class="fa fa-sitemap"></i> Communication<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="diary.html">Diary</a>
+                    </li>
+                    <li>
+                        <a href="message.html">Message</a>
+                    </li>
+
+                    <li>
+                        <a href="homework.html">Homework</a>
+                    </li>
+
+                    <li>
+                        <a href="notice-board.html">Notice Board</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i>Attendance<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="attendance.html">Attenandnace</a>
+                    </li>
+                    <li>
+                        <a href="attendance-report.html">Attendance Report</a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i>Academic<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="mark-entry.html">Markentry</a>
+                    </li>
+                    <li>
+                        <a href="progress-report.html">Progress Report</a>
+                    </li>
+                    <li>
+                        <a href="exam-timetable.html">Exam Time Table</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i>School Management<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="student-management.html">Student Management</a>
+                    </li>
+                    <li>
+                        <a href="class-management.html">Class Management</a>
+                    </li>
+
+                    <li>
+                        <a href="staff-management.html">Staff Management</a>
+                    </li>
+
+
+                </ul>
+            </li> -->
+
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i>{{ _('Fee Managment') }}<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+
+                    <!-- <li>
+                        <a href="#">Fee Collection</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Reports</a>
+                    </li> -->
+                    <li>
+                        <a href="{{ url_for('dashboard.fee') }}">{{ _('Set School Fee') }}</a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+
+            <li>
+                <a href=""><i class="fa fa-desktop"></i> {{ _('Transport Management') }} </a>
+            </li>
+
+
+            {% if "Support" in session[user_type] %}
+            <li>
+                <a href="{{ url_for('dashboard') }}"><i class="fa fa-cloud-upload"></i> Cloud upload </a>
+            </li>
+            {% endif %}
+
+            <!-- <li>
+                <a href="#"><i class="fa fa-cog fa-spin"></i> Additional Settings </a>
+            </li> -->
+
+        </ul>
+
+    </div>
+
+</nav>
+<!-- /. NAV SIDE  -->

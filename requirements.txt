@@ -1,0 +1,14 @@
+flask
+flask_wtf
+Flask-Mail
+flask_sqlalchemy
+pyjwt
+uwsgi
+jsonschema
+flask-babel
+Flask-WeasyPrint
+
+# pip install flask_marshmallow
+# pip install marshmallow-sqlalchemy
+
+# pipenv run python3 myapp.py

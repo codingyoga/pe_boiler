@@ -1,0 +1,286 @@
+{% extends 'base/header.html' %}
+
+{% block body %}
+
+    <div class="row">
+
+        <div class="col-md-6 col-sm-6">
+            <div class="panel short-states bg-info st-stren">
+                <div class="card-header-a1">
+                    <span class="material-icons">989/1000</span></div>
+                <div class="pull-right state-icon">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="panel-body">
+                    <h1 class="light-txt" style="visibility:hidden;">989/1000</h1>
+                    <div class=" pull-right">87% <i class="fa fa-level-up"></i></div>
+                    <strong class="text-uppercase">TOTAL STUDENTS STRENGTH</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+            <div class="panel short-states bg-primary st-stren">
+                <div class="card-header-a2">
+                    <span class="material-icons">110/125</span></div><br>
+
+
+                <div class="pull-right state-icon">
+                    <i class="fa fa-users"></i>
+                </div>
+                <div class="panel-body">
+                    <h1 class="light-txt" style="visibility:hidden;">110/125</h1>
+                    <div class=" pull-right">95% <i class="fa fa-level-up"></i></div>
+                    <strong class="text-uppercase">TOTAL TEACHERS STRENGTH</strong>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    DIARY
+
+                </div>
+
+                <div class="panel-body">
+                    <div class="list-group">
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge">Click</span>
+                            Compose New Diary
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">Click</span>
+                            View Diary Notes
+                        </a>
+
+                    </div>
+                    <div class="text-right">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    SCHOOL FEES
+
+                </div>
+
+                <div class="panel-body">
+                    <div class="list-group">
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge">Click</span>
+                            Fee Collection
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge">Click</span>
+                            Fee Collection Report
+                        </a>
+
+                    </div>
+                    <div class="text-right">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row sec-ens">
+
+        <div class="col-lg-3 col-md-12 col-xs-12">
+            <div class="single-blog-post cardr">
+
+                <div class="headeree">
+
+                    <div class="card-header2 hda">
+                        <h4>EVENTS</h4>
+                    </div>
+                </div>
+                <div class="img-holder">
+                    <div class="img-post"><img src="{{ url_for('static', filename='test_img/blog-page-3.jpg') }}"
+                            alt="Awesome Image"></div>
+                    <div class="date-box"><span>30</span><br>
+                        June</div>
+                </div>
+                <div class="bodeer">
+                    <p>Lorem Ipsum is sim Lorem Ipsum has been the industry.Ipsum has been the</p>
+                    <a href="#" class="btn btn-default bt-in-s">Read More</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-5 col-md-12 col-xs-12">
+            <div class="single-blog-post cardr">
+
+                <div class="headeree">
+
+                    <div class="card-header2 hda">
+                        <h4>NOTICE BOARD</h4>
+                    </div>
+                </div>
+                <div class="img-holder ">
+                    <div class="img-post ats">
+                        <img src="{{ url_for('static', filename='test_img/notice-img.jpg') }}" alt="Awesome Image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12 col-xs-12">
+            <div class="search-st-area">
+                <h3>STUDENT SEARCH</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="name" class="form-control" id="name" placeholder="Type Name">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="sel1">
+                            <option>Select Class</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="mobile" class="form-control" id="mobile" placeholder="Mobile no">
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="admission" class="form-control" id="admission" placeholder="Admission No">
+                    </div>
+
+                    <button type="submit" class="btn btn-default bt-in-s" style="float:right;">Search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row fr-menu-cntr">
+        <div class="col-lg-12 col-md-12 col-xs-12">
+            <div class="single-blog-post cardr">
+
+                <div class="headeree">
+
+                    <div class="card-header2 hda2">
+                        <h4>FREQUENTLY USED MENUS</h4>
+                    </div>
+                </div>
+
+                <div class="panel-body">
+
+
+                    <div class="bx-jk">
+
+                        <div class="fr-bt-box">
+                            <a href="#">
+                                <span>Daily Attendance</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="fr-bt-box2">
+                            <a href="#">
+                                <span>Attendance Report</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="bx-jk">
+
+                        <div class="fr-bt-box2">
+                            <a href="#">
+                                <span>Message to Employees</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="fr-bt-box">
+                            <a href="#">
+                                <span>Message to Parents</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bx-jk">
+
+                        <div class="fr-bt-box">
+                            <a href="#">
+                                <span>Notice Board </span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="fr-bt-box2">
+                            <a href="#">
+                                <span>Time Table</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="bx-jk">
+
+                        <div class="fr-bt-box2">
+                            <a href="#">
+                                <span>Contact List</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="fr-bt-box">
+                            <a href="#">
+                                <span>School Bus</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="bx-jk">
+                        <div class="fr-bt-box line-h-n">
+                            <a href="#">
+                                <span>Send ParentEye <br>
+                                    installation Note</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <div class="fr-bt-box2 line-h-n">
+                            <a href="#">
+                                <span>ParentEye Release<br>
+
+                                    Note</span>
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

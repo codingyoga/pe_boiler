@@ -1,0 +1,67 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap Js -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+<!-- Bootstrap date picker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+
+
+
+<script>
+    $('.asd').on('click', function () {
+        $('.wrap, .asd').toggleClass('active');
+
+        return false;
+    });
+</script>
+<!-- Metis Menu Js -->
+<script src="{{ url_for('static', filename='js/jquery.metisMenu.js') }}"></script>
+<!-- Custom Js -->
+<script src="{{ url_for('static', filename='js/custom-scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/parenteye.js') }}"></script>
+<script src="{{ url_for('static', filename='js/download.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vue-multiselect-2.1.0.js') }}"></script>
+<script>
+
+    function date_time(id) {
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if (h < 10) {
+            h = "0" + h;
+        }
+        m = date.getMinutes();
+        if (m < 10) {
+            m = "0" + m;
+        }
+        s = date.getSeconds();
+        if (s < 10) {
+            s = "0" + s;
+        }
+        result = '' + days[day] + ' ' + months[month] + ' ' + d + ' , ' + year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("' + id + '");', '1000');
+        return true;
+    }
+
+</script>
+
+<script type="text/javascript">window.onload = date_time('date_time');</script>
+
+
+<!-- this is added by jithin on 17-04-2019 for multiselect -->
+<!-- <script type="text/javascript" src="https://unpkg.com/vue-multiselect@2.0.3/dist/vue-multiselect.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://unpkg.com/vue-multiselect@2.1.0"></script> -->
+<script src="https://cdn.jsdelivr.net/vuejs-paginator/2.0.0/vuejs-paginator.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.10/css/bootstrap-select.css"></script>
+
+<!-- <script src="https://unpkg.com/vue/dist/vue.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue2-filters/dist/vue2-filters.min.js"></script> -->
+<script>
+</script>

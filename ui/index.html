@@ -1,0 +1,688 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PARENT EYE</title>
+ <style>
+	.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+	
+	.card-header {
+    box-shadow: 0 10px 30px -12px rgba(0,0,0,.42),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
+    margin: -20px 15px 0;
+    border-radius: 3px;
+    padding: 15px;
+}
+	
+	
+	.card-header2 {
+    box-shadow: 0 10px 30px -12px rgba(0,0,0,.42),0 4px 25px 0 rgba(0,0,0,.12),0 8px 10px -5px rgba(0,0,0,.2);
+    margin: -33px 0px 0;
+    border-radius: 3px;
+    padding: 8px;
+}
+
+	.wrap {
+  position: absolute;
+  overflow: hidden;
+  top: 10%;
+  right: 10%;
+  bottom: 85px;
+  left: 10%;
+  padding: 20px 50px;
+  display: block;
+  border-radius: 4px;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  visibility: hidden;
+}
+.wrap .content {
+  opacity: 0;
+}
+.wrap:before {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: white;
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  top: 95%;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active {
+  display: block;
+  visibility: visible;
+  box-shadow: 2px 3px 16px silver;
+  transition: all 600ms;
+  transform: translateY(0px);
+  transition: all 0.5s;
+}
+.wrap.active:before {
+  height: 2000px;
+  width: 2000px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  margin-left: -1000px;
+  margin-top: -1000px;
+  display: block;
+  -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.wrap.active .content {
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+a.button {
+  padding: 11px 11px 13px 13px;
+  outline: none;
+  border-radius: 50%;
+  background: #007fed;
+  color: #fff;
+  font-size: 24px;
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  margin-left: -25px;
+  transition: transform 0.25s;
+}
+a.button:hover {
+  text-decoration: none;
+  background: #2198ff;
+}
+a.button.active {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+
+	</style>
+    
+
+	<link rel="shortcut icon" href="assets/img/favi.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Main Styles-->
+    <link href="assets/css/parenteye-main.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/parenteye-media.css" rel="stylesheet" type="text/css">
+   
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><img src="assets/img/logo.png" class="img-responsive" class="img-responsive"></strong></a>
+                
+                
+                
+                
+				
+		<div id="sideNav" href="">
+		<i class="fa fa-bars icon"></i> 
+		</div>
+            </div>
+            
+            
+            
+            <div class="col-md-6 head-namer">
+            <h3>St.Mary's English Medium School</h3>    
+            </div>
+
+			
+            <ul class="nav navbar-top-links navbar-right">
+               <li class="tim"> <span id="date_time">Friday August 25 2017 10:22:08</span></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                    	<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+ 					<div class="user-pro-wrap">
+               <div class="user-profile-thumb text-center">
+                  <div class="user-i">
+                     <img alt="" class="rad-full mb-1" src="assets/img/dummy_man.png" width="100" height="100">
+                     <div> 
+                     <span>John Doe</span>
+                     
+                     </div>
+                     <div> 
+                     
+                     <span style="font-weight:normal;">Principal</span>
+                     </div>
+                     </div>
+                  
+               </div>
+               
+            </div>
+                    <li>
+                        <a href="#" href="index.html"><i class="fa fa-sitemap"></i> Communication<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="diary.html">Diary</a>
+                            </li>
+                            <li>
+                                <a href="message.html">Message</a>
+                            </li>
+                            
+                            <li>
+                                <a href="homework.html">Homework</a>
+                            </li>
+                            
+                            <li>
+                                <a href="notice-board.html">Notice Board</a>
+                            </li>
+                            
+                            
+							</ul>
+						</li>
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Attendance<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="attendance.html">Attenandnace</a>
+                            </li>
+                            <li>
+                                <a href="attendance-report.html">Attendance Report</a>
+                            </li>
+                           
+							</ul>
+						</li>
+                       
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Academic<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="mark-entry.html">Markentry</a>
+                            </li>
+                            <li>
+                                <a href="progress-report.html">Progress Report</a>
+                            </li>
+                            <li>
+                                <a href="exam-timetable.html">Exam Time Table</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>School Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="student-management.html">Student Management</a>
+                            </li>
+                            <li>
+                                <a href="class-management.html">Class Management</a>
+                            </li>
+                            
+                             <li>
+                                <a href="staff-management.html">Staff Management</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Fee Managment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                          
+                            <li>
+                                <a href="#">Fee Collection</a>
+                            </li>
+                            
+                             <li>
+                                <a href="#">Reports</a>
+                            </li>
+                             <li>
+                                <a href="#">Set School Fee</a>
+                            </li>
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                         <li>
+                        <a href="transport.html"><i class="fa fa-desktop"></i>  Transport Management  </a>
+                    </li> 
+                    
+                    
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  Export /Import  </a>
+                    </li> 
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  User Management   </a>
+                    </li> 
+                
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+        <div class="header"> 
+        
+                        <h1 class="page-header">
+                          
+        	<div class="head-mn">
+        	 	<h1>St.Mary's English Medium School</h1>
+        	</div>
+		</div>
+   
+       <div id="page-inner">
+     
+        <div class="row">
+     
+        <div class="col-md-6 col-sm-6">
+                                <div class="panel short-states bg-info st-stren">
+                                <div class="card-header-a1">
+                                <span class="material-icons">989/1000</span></div>
+                                    <div class="pull-right state-icon">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h1 class="light-txt" style="visibility:hidden;">989/1000</h1>
+                                        <div class=" pull-right">87% <i class="fa fa-level-up"></i></div>
+                                        <strong class="text-uppercase">TOTAL STUDENTS STRENGTH</strong>
+                                    </div>
+                                </div>
+        </div>
+       
+        <div class="col-md-6 col-sm-6">
+                                <div class="panel short-states bg-primary st-stren">
+                                <div class="card-header-a2">
+                                <span class="material-icons">110/125</span></div><br>
+
+
+                                    <div class="pull-right state-icon">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h1 class="light-txt" style="visibility:hidden;">110/125</h1>
+                                        <div class=" pull-right">95% <i class="fa fa-level-up"></i></div>
+                                        <strong class="text-uppercase">TOTAL TEACHERS STRENGTH</strong>
+                                    </div>
+                                </div>
+         </div>
+       
+                </div>
+                
+         
+                <div class="row">
+                
+                	<div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                DIARY
+                               
+                            </div>
+                            
+                            <div class="panel-body">
+                                <div class="list-group">
+
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">Click</span>
+                                        Compose New Diary
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">Click</span>
+                                       View Diary Notes
+                                    </a>
+                                    
+                                </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                            SCHOOL FEES
+                             
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="list-group">
+
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">Click</span>
+                                        Fee Collection
+                                    </a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge">Click</span>
+                                         Fee Collection Report
+                                    </a>
+                                    
+                                </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+         
+                    
+                </div>
+         
+                <div class="row sec-ens">
+                
+                	<div class="col-lg-3 col-md-12 col-xs-12">
+                        <div class="single-blog-post cardr">
+                        
+                            <div class="headeree">
+                                
+                                <div class="card-header2 hda" ><h4>EVENTS</h4></div>
+                            </div>
+                            <div class="img-holder">
+                                <div class="img-post"><img src="assets/img/blog-page-3.jpg" alt="Awesome Image"></div>
+                                <div class="date-box"><span>30</span><br>
+                                    June</div>
+                            </div>
+                            <div class="bodeer">
+                            <p>Lorem Ipsum is sim Lorem Ipsum has been the industry.Ipsum has been the</p>
+                            <a href="#" class="btn btn-default bt-in-s">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                   
+                    <div class="col-lg-5 col-md-12 col-xs-12">
+                        <div class="single-blog-post cardr">
+                        
+                            <div class="headeree">
+                                
+                                <div class="card-header2 hda" ><h4>NOTICE BOARD</h4></div>
+                            </div>
+                            <div class="img-holder ">
+                                <div class="img-post ats"><img src="assets/img/notice-img.jpg" alt="Awesome Image"></div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                  
+                     <div class="col-lg-4 col-md-12 col-xs-12">
+                     	<div class="search-st-area">
+                        	<h3>STUDENT SEARCH</h3>	
+<form>
+<div class="form-group">
+
+<input type="name" class="form-control" id="name" placeholder="Type Name">
+</div>
+<div class="form-group">
+<select class="form-control" id="sel1">
+<option>Select Class</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+</div> 
+<div class="form-group">
+<input type="mobile" class="form-control" id="mobile" placeholder="Mobile no">
+</div>
+
+<div class="form-group">
+
+<input type="admission" class="form-control" id="admission" placeholder="Admission No">
+</div>
+
+<button type="submit" class="btn btn-default bt-in-s" style="float:right;">Search</button>
+</form> 
+                        </div>
+                     </div>
+   
+                </div>
+                
+      <div class="row fr-menu-cntr">
+           	<div class="col-lg-12 col-md-12 col-xs-12">
+                        <div class="single-blog-post cardr">
+                        
+                            <div class="headeree">
+                                
+                                <div class="card-header2 hda2" ><h4>FREQUENTLY USED MENUS</h4></div>
+                            </div>
+                            
+                            
+                            
+                            <div class="panel-body">
+                            
+                            
+                            <div class="bx-jk">
+                            
+                            	<div class="fr-bt-box">
+                            	<a href="#">
+                                	<span>Daily Attendance</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            	<div class="fr-bt-box2">
+                            	<a href="#">
+                                	<span>Attendance Report</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            </div>
+                            
+                            
+                            
+                              <div class="bx-jk">
+                            
+                            	<div class="fr-bt-box2">
+                            	<a href="#">
+                                	<span>Message to Employees</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            	<div class="fr-bt-box">
+                            	<a href="#">
+                                	<span>Message to Parents</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            </div>
+                            
+                            
+                            
+                            
+                              <div class="bx-jk">
+                            
+                            	<div class="fr-bt-box">
+                            	<a href="#">
+                                	<span>Notice Board </span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            	<div class="fr-bt-box2">
+                            	<a href="#">
+                                	<span>Time Table</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            </div>
+                            
+                            
+                            
+                            
+                              <div class="bx-jk">
+                            
+                            	<div class="fr-bt-box2">
+                            	<a href="#">
+                                	<span>Contact List</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            	<div class="fr-bt-box">
+                            	<a href="#">
+                                	<span>School Bus</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            </div>
+                            
+                            
+                            
+                              <div class="bx-jk">
+                            
+                            	<div class="fr-bt-box line-h-n">
+                            	<a href="#">
+                                	<span>Send ParentEye <br>
+
+installation  Note</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            	<div class="fr-bt-box2 line-h-n">
+                            	<a href="#">
+                                	<span>ParentEye Release<br>
+ 
+Note</span>
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            
+                            </div>
+                            
+                            
+                            
+                            
+                            </div>
+                  </div>
+                    </div>
+           
+           </div>     
+                
+				<footer><p>@2017 All rights are reserved  <a href="">Scientia Innovation Pvt Ltd</a></p>
+
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+	 <script>
+    $('.asd').on('click', function(){
+  $('.wrap, .asd').toggleClass('active');
+  
+  return false;
+});
+</script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+<script>
+
+function date_time(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time');</script>
+
+</body>
+
+</html>

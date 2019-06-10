@@ -1,0 +1,90 @@
+
+</style>
+<table>
+    <tr>
+        <td><img src="https://s3.amazonaws.com/parenteyeprod/logos/ALPHONSA+SCHOOL+Logo"
+                style="margin-left:100px;height: 70pt;"></td>
+        <td style="width:30px"></td>
+        <td><label
+                style="font-size:20px">{{ schoolName }}</label><br><label style="font-size:15px;margin-left:70px">{{ schoolFirstRowInfo }}</label><br><label style="font-size:15px;margin-left:70px">{{ schoolSecondRowInfo }}</label>
+        </td>
+    </tr>
+
+</table>
+
+<br>
+<br>
+<br>
+<table style="margin-left:-10px;border: 1px">
+    <tr>
+        <td></td>
+        <td style="width: 300px;font-size: 14px;"><b>Reciept No:{{ recipetNumber }}</b></td>
+        <td style="width: 20px;font-size: 14px;"><b>Admission No:{{ admissionNo }}</b></td>
+        <td style="width: 200px;font-size: 14px;"><b>Date:{{ date }}</b></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style="width: 300px;"><b>Name:{{ name }}</b></td>
+        <td style="width: 200px;"></td>
+        <td style="width: 200px;"><b>Class:{{ class }}</b></td>
+    </tr>
+</table>
+<hr>
+<table style="margin-left:-10px;">
+    <tr style="height:40px;border-bottom: black">
+        <td></td>
+        <td><b>Sl.no</b></td>
+        <td style="width:250px"><b>Item</b></td>
+        <td style="width:140px"><b>Amount</b></td>
+        <td style="width:130px"><b>Discount</b></td>
+        <td><b>Paid</b></td>
+    </tr>
+    {% for fee in fees%}
+    <tr>
+        <td></td>
+        <td>{{ fee.Slno }}</td>
+        <td style="width:100px">{{ fee.fee_name }}-{{ fee.term_name }}</td>
+        <td style="width:50px">{{ fee.Due }}</td>
+        <td style="width:100px">{{ fee.Discount }}</td>
+        <td style="width:100px">{{ fee.Amount }}</td>
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+<br>
+<br>
+<br>
+<table>
+    <tr></tr>
+    <tr>
+        <td style="width:450px"></td>
+        <td style="width:400px"><b>Net Amount:{{ net }}</b></td>
+    </tr>
+    <tr>
+        <td style="width:45 0px"></td>
+        <td style="width:200px"><b>Total Paid:{{ total }}</b></td>
+    </tr>
+</table>
+<table><td style="width:540px"><b>Grand Total (in Words):</b>{{ total_in_words }}</td></table>
+<hr>
+<br>
+<br>
+<br>
+<br>
+<label style="margin-left:40%;"><b>Authorised Signature</b></label>
+<br>
+<br>
+<label style=""><b>Terms & Conditions</b></label>
+<table>
+    <tr></tr>
+    <tr>
+        <td></td>
+        <td style="width:400px">1.Fee paid is not transferable</td>
+        <td>seal</td>
+    </tr>
+    <tr></tr>
+    <tr>
+        <td></td>
+        <td style="width:400px">Printed On:{{ date }}</td>
+    </tr>
+</table>

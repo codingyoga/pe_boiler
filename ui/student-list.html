@@ -1,0 +1,1115 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+    <title>PARENT EYE</title>
+    
+ <style>
+ #trans-inf h3{
+	 margin-bottom:15px;}
+ #fee-inf h3{
+	 margin-bottom:15px;}
+ #academic-inf img{
+	 margin-top:20px;}
+	#dataTables-example2_length{
+		display:none;}
+	.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+a.button {
+  padding: 11px 11px 13px 13px;
+  outline: none;
+  border-radius: 50%;
+  background: #007fed;
+  color: #fff;
+  font-size: 24px;
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  margin-left: -25px;
+  transition: transform 0.25s;
+}
+a.button:hover {
+  text-decoration: none;
+  background: #2198ff;
+}
+a.button.active {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+.nav-tabs > li > a{
+	background-color:#f36b5b !important;
+	color:#fff;}
+.nav-tabs{
+	border-bottom:none !important;}
+	.nav-tabs .active a {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+
+	</style>
+    
+
+	<link rel="shortcut icon" href="assets/img/favi.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Main Styles-->
+    <link href="assets/css/parenteye-main.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/parenteye-media.css" rel="stylesheet" type="text/css">
+   
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://resources/demos/style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><img src="assets/img/logo.png" class="img-responsive" class="img-responsive"></strong></a>
+                
+                
+                
+                
+				
+		<div id="sideNav" href="">
+		<i class="fa fa-bars icon"></i> 
+		</div>
+            </div>
+            
+            
+            
+            <div class="col-md-6 head-namer">
+            <h3>St.Mary's English Medium School</h3>    
+            </div>
+
+			
+            <ul class="nav navbar-top-links navbar-right">
+                
+               
+               
+               
+               <li class="tim"> <span id="date_time">Friday August 25 2017 10:22:08</span></li>
+               
+             <!--  <li class="schl-nam"><h3>St.Mary's English Medium School</h3>  </li> -->        
+               
+               
+                <li class="dropdown">
+                
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                       
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+   
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li style="text-align:center;">
+                        <a class="active-menu" href="#" style="text-align:center; background-color:#3e3e3e !important;"> Student List</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="#" href="index.html"><i class="fa fa-sitemap"></i> Communication<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="diary.html">Diary</a>
+                            </li>
+                            <li>
+                                <a href="message.html">Message</a>
+                            </li>
+                            
+                            <li>
+                                <a href="homework.html">Homework</a>
+                            </li>
+                            
+                            <li>
+                                <a href="notice-board.html">Notice Board</a>
+                            </li>
+                            
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Attendance<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="attendance.html">Attenandnace</a>
+                            </li>
+                            <li>
+                                <a href="attendance-report.html">Attendance Report</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Academic<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="mark-entry.html">Markentry</a>
+                            </li>
+                            <li>
+                                <a href="progress-report.html">Progress Report</a>
+                            </li>
+                            <li>
+                                <a href="exam-timetable.html">Exam Time Table</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>School Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="student-management.html">Student Management</a>
+                            </li>
+                            <li>
+                                <a href="class-management.html">Class Management</a>
+                            </li>
+                            
+                             <li>
+                                <a href="staff-management.html">Staff Management</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Fee Managment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                          
+                            <li>
+                                <a href="#">Fee Collection</a>
+                            </li>
+                            
+                             <li>
+                                <a href="#">Reports</a>
+                            </li>
+                             <li>
+                                <a href="#">Set School Fee</a>
+                            </li>
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                         <li>
+                        <a href="transport.html"><i class="fa fa-desktop"></i>  Transport Management  </a>
+                    </li> 
+                    
+                    
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  Export /Import  </a>
+                    </li> 
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  User Management   </a>
+                    </li> 
+                        
+                        
+                        
+                        
+                    
+                    
+                    
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+     <div class="header"> 
+        
+        			
+        
+                        <h1 class="page-header">
+                          
+        	<div class="head-mn">
+        	 	<h1>St.Mary's English Medium School</h1>
+        	</div>
+        
+                   
+									
+		</div>
+     
+            <div id="page-inner">
+         
+                <div class="row">
+                
+                	<div class="col-md-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                               
+                               
+                            </div>
+                            
+                            <div class="panel-body">
+                                <div class="list-group text-center frt">
+
+                             
+                                   <h3> Student List</h3>
+
+                                  <br><br>  
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                
+                </div>
+                
+            <div class="row">
+                
+                	
+                    
+<div class="col-md-12 ">
+<div class="panel panel-default">
+<div class="panel-heading">
+
+
+</div>
+
+<div class="panel-body">
+<div class="list-group text-center frt">
+<div class="row">
+	<div class="col-md-3 text-left">
+    	<a type="button" class="btn btn-success" href="student-management.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+</a>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-3"></div>
+<div class="col-md-3">
+
+<select class="form-control input-lg" id="sel1">
+<option>Select Class</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+</select>
+</div>
+<div class="col-md-3">
+<button type="submit" class="btn btn-default bt-in-s input-lg" style="float:left;">Search</button>
+
+</div>
+<div class="col-md-3"></div>
+
+</div>
+                                    
+</div>
+
+</div>
+</div>
+
+</div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="col-md-12 ">
+                        <div class="panel panel-default">
+                        
+                        		
+                             <div class="panel-body">   
+                             
+                             
+                             
+                             
+                             <div class="row">
+                               <div class="col-sm-2">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Class Teacher Name  : Anupama</div>
+                               </div>
+                               
+                               <div class="col-sm-2">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Boys  : 20</div>
+                               </div>
+                               <div class="col-sm-2">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Girls : 14</div>
+                               </div>
+                               <div class="col-sm-2">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Total No of Students  : 34</div>
+                               </div>
+                                <div class="col-sm-2">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all"><a type="button" style="margin-bottom:15px;" class="btn btn-danger" data-toggle="modal" data-target="#myModallkj">Export to Excel</a></div>
+                               </div>
+                                <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all"><a type="button" style="margin-bottom:15px;" class="btn btn-danger" data-toggle="modal" data-target="#myModallkjw">Excel Import</a></div>
+                               </div>
+                               
+                               <div id="myModallkj" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Export to Excel</h4>
+      </div>
+      <div class="modal-body">
+         <div class="row">
+ 
+       
+        <input type="file" class="text-center center-block well well-sm">
+        <center><a  type="button" class="btn btn-success">Export</a></center>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<div id="myModallkjw" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Export to Excel</h4>
+      </div>
+      <div class="modal-body">
+         <div class="row">
+ 
+       
+        <input type="file" class="text-center center-block well well-sm">
+        <center><a  type="button" class="btn btn-success">Import</a></center>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="row">
+                              
+                               <div class="col-sm-2">
+                               <div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Total No of Students  : 34</div>
+                               </div>
+                               
+                               
+                               
+                            </div>
+                            
+                            <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">Sl No</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 411px;" aria-label="Browser: activate to sort column ascending">Profile Pic</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 373px;" aria-label="Platform(s): activate to sort column ascending">Name of Student</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Name of Guardian</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Mobile No</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Email id</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Location</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Select All&nbsp; <input type="checkbox" id="select_all" /> <button type="button" id='dltal'><i class="fa fa-trash-o"></i></button></th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Show the Details</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="sorting_1">1</td>
+                                            <td class="pr-pc"><img src="assets/img/dummy_man.png"></td>
+                                            <td class=" ">Abhinav.P</td>
+                                             <td class=" ">Ashokan.P</td>
+                                              <td class="">9447226824</td>
+                                              <td class="">abc@gmail</td>
+                                              <td class="">xyz</td>
+                                              <td class=""><input type="checkbox" class="checkbox" name="case" value="1" /></td>
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">Show the Details</a> </td>
+                                            
+                                        </tr>
+                                        <tr class="gradeA even">
+                                          <td class="sorting_1">2</td>
+                                            <td class="pr-pc"><img src="assets/img/dummy_man.png"></td>
+                                            <td class=" ">Rajesh.K</td>
+                                             <td class=" ">Rajan.K</td>
+                                              <td class="">9447226824</td>
+                                              <td class="">abc@gmail</td>
+                                              <td class="">zxcv</td>
+                                              <td class=""><input type="checkbox" class="checkbox" name="case" value="2" /></td>
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">Show the Details</a> </td>
+                                            
+                                        </tr>
+                                        
+                                       <tr class="gradeA odd">
+                                            <td class="sorting_1">3</td>
+                                            <td class="pr-pc"><img src="assets/img/dummy_man.png"></td>
+                                            <td class=" ">Abhinav.P</td>
+                                             <td class=" ">Ashokan.P</td>
+                                              <td class="">9447226824</td>
+                                              <td class="">abc@gmail</td>
+                                              <td class="">xyz</td>
+                                              <td class=""><input type="checkbox" class="checkbox" name="case" value="3" /></td>
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">Show the Details</a> </td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA even">
+                                          <td class="sorting_1">4</td>
+                                            <td class="pr-pc"><img src="assets/img/dummy_man.png"></td>
+                                            <td class=" ">Abhinav.P</td>
+                                             <td class=" ">Ashokan.P</td>
+                                              <td class="">9447226824</td>
+                                              <td class="">abc@gmail</td>
+                                              <td class="">xyz</td>
+                                              <td class=""><input type="checkbox" class="checkbox" name="case" value="4" /></td>
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">Show the Details</a> </td>
+                                            
+                                        </tr>
+                                        <tr class="gradeA odd">
+                                            <td class="sorting_1">3</td>
+                                            <td class="pr-pc"><img src="assets/img/dummy_man.png"></td>
+                                            <td class=" ">Abhinav.P</td>
+                                             <td class=" ">Ashokan.P</td>
+                                              <td class="">9447226824</td>
+                                              <td class="">abc@gmail</td>
+                                              <td class="">xyz</td>
+                                              <td class=""><input type="checkbox" class="checkbox" name="case" value="5" /></td>
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">Show the Details</a> </td>
+                                            
+                                        </tr>
+                                        <tr class="gradeA even">
+                                          <td class="sorting_1">4</td>
+                                            <td class="pr-pc"><img src="assets/img/dummy_man.png"></td>
+                                            <td class=" ">Abhinav.P</td>
+                                             <td class=" ">Ashokan.P</td>
+                                              <td class="">9447226824</td>
+                                              <td class="">abc@gmail</td>
+                                              <td class="">xyz</td>
+                                              <td class=""><input type="checkbox" class="checkbox" name="case" value="1" /></td>
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">Show the Details</a> </td>
+                                            
+                                        </tr>
+                                        
+                                        </tbody>
+                                </table>
+                                
+                                </div>
+                            </div>
+                               
+                            </div>
+                            
+                            
+                             
+                           
+                            
+                            
+                            
+                            </div>   
+                     
+                    </div>
+                    
+                    </div>
+          
+                </div> 
+
+   <div class="modal fade" id="myModalq1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel">
+
+
+St.Marys School English Medium School<br>
+
+Student Profile
+
+</h4>
+
+        
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-default" style="border:none;">
+                       
+                        <div class="panel-body">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#personal-information" data-toggle="tab" aria-expanded="true">Personal Information</a>
+                                </li>
+                                <li class=""><a href="#academic-inf" data-toggle="tab" aria-expanded="false">Academic Information</a>
+                                </li>
+                                <li class=""><a href="#fee-inf" data-toggle="tab" aria-expanded="false">Fee information</a>
+                                </li>
+                                <li class=""><a href="#trans-inf" data-toggle="tab" aria-expanded="false">Transport information with Map</a>
+                                </li>
+                                <li class=""><a href="#leave" data-toggle="tab" aria-expanded="false">Leave</a>
+                                </li>
+                               
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade active in" id="personal-information">
+                                    <div class="col-sm-4" style="margin-top:15px;">
+                             	<img src="assets/img/dummy_man.png">
+                             </div>
+                                  <div class="col-sm-8" style="padding-left:0;">
+                                   	<div>
+                                    <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info" >
+                                    
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="">Admission No</td>
+                                            <td class=" ">234516584</td>
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Registration No</td>
+                                            <td class=" ">Reg12457524</td>
+                                            
+                                        </tr>
+                                        
+                                           <tr class="gradeA odd">
+                                            <td class="">Aadhar No</td>
+                                            <td class=" ">789456123</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Passport No</td>
+                                            <td class=" ">asd54228532</td>
+                                            
+                                        </tr>
+                                        
+                                         
+                                        
+                                           <tr class="gradeA odd">
+                                            <td class="">Name of Student</td>
+                                            <td class=" ">Abhinav P</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Gender</td>
+                                            <td class=" ">Boy/Girl</td>
+                                            
+                                        </tr>
+                                        
+                                           <tr class="gradeA odd">
+                                            <td class="">Class</td>
+                                            <td class=" ">10 B</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Name of Father</td>
+                                            <td class=" ">Ashokan P</td>
+                                            
+                                        </tr>
+                                        
+                                          <tr class="gradeA odd">
+                                            <td class="">Occupation</td>
+                                            <td class=" ">Doctor</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Name Mother</td>
+                                            <td class=" ">Geetha </td>
+                                            
+                                        </tr>
+                                        
+                                          <tr class="gradeA odd">
+                                            <td class="">Name of guardian</td>
+                                            <td class=" ">Vineeth</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Mobile No</td>
+                                            <td class=" ">9447226824</td>
+                                            
+                                        </tr>
+                                        
+                                           <tr class="gradeA odd">
+                                            <td class="">E-mail address</td>
+                                            <td class=" ">xyz@gmail.com</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Nationality</td>
+                                            <td class=" ">Indian</td>
+                                            
+                                        </tr>
+                                        
+                                          <tr class="gradeA odd">
+                                            <td class="">Location</td>
+                                            <td class=" ">Kozhikode</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Address</td>
+                                            <td class=" ">PQR House
+                                          Main Road
+                                          Kozhikode
+                                          </td>
+                                            
+                                        </tr>
+                                        
+                                          <tr class="gradeA odd">
+                                            <td class="">Date of Birth</td>
+                                            <td class=" ">7th May 2001</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Religion</td>
+                                            <td class=" ">Hindu</td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA odd">
+                                            <td class="">Caste</td>
+                                            <td class=" ">Thiyya</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Category</td>
+                                            <td class=" ">OBC</td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA odd">
+                                            <td class="">Date of Admission with year</td>
+                                            <td class=" ">23-6-2017</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Standard of Admission</td>
+                                            <td class=" ">xyz</td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA odd">
+                                            <td class="">Documents</td>
+                                            <td class=" ">
+                                            <select class="form-control input-lg" id="sel1">
+                                              <option>Select the type of Document</option>
+                                              <option>ID Proof  (Scanned Copy)</option>
+                                              <option>Previous School documents(Scanned Copy)</option>
+                                              <option>Passport</option>
+                                              <option>Other Documents</option>
+                                              </select>
+                                            <ul>
+                                            	<li>ID Proof  (Scanned Copy)</li>
+                                                <li>Previous School documents(Scanned Copy)</li>
+                                                <li>Passport</li>
+                                                <li>Other Documents</li>
+                                            </ul>
+                                            
+                                            </td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Standard of Admission</td>
+                                            <td class=" ">xyz</td>
+                                            
+                                        </tr>
+                                        
+                                        
+                                         <tr class="gradeA odd">
+                                            <td class="">Identification Marks</td>
+                                            <td class=" "></td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Comments</td>
+                                            <td class=" "><textarea class="form-control " rows="5" id="" name="message" placeholder="Comments..." style="width:100%;"></textarea></td>
+                                            
+                                        </tr>
+                                        
+                                       
+                                        
+                                        </tbody>
+                                </table>
+                                
+                              </div>
+                            </div>
+                            
+                            </div>
+                            
+                            <br>
+<input class="btn btn-success" value="Print" type="button"> 
+                            </div>
+                            
+                             
+                            
+                            
+                            
+                            
+                            
+         
+                                </div>
+                                <div class="tab-pane fade" id="academic-inf">
+                                    <h3>Progress Card</h3>
+                                    <img src="assets/img/progress card.png" class="img-responsive"><br>
+
+                                    <input type="button" class="btn btn-success" value="Print" >
+                                </div>
+                                
+                                <div class="tab-pane fade" id="fee-inf">
+                                    <h3>Fee Details</h3>
+                                    <p>Total Fee :  Rs 1000000</p>
+                                    <p>Paid :Rs 150000</p>
+                                    
+                                    
+                                    
+                                    <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">Sl.no</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 411px;" aria-label="Browser: activate to sort column ascending">Date</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 373px;" aria-label="Platform(s): activate to sort column ascending">Bill No</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Amount</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Payment Mode</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">View Receipt</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="sorting_1">1</td>
+                                            <td class=" ">15- Aug -2017</td>
+                                            <td class=" ">456345</td>
+                                            <td class="">Rs.50000</td>
+                                            <td class=" ">Bank</td>
+                                           
+                                            <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">View</a> </td>
+                                        </tr>
+                                       
+                                        <tr class="gradeA even">
+                                        <td class="sorting_1">2</td>
+                                            <td class=" ">22- Sep -2017</td>
+                                            <td class=" ">556345</td>
+                                            <td class="">Rs.150000</td>
+                                            <td class=" ">Bank</td>
+                                            
+                                            <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">View</a> </td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                               </div>
+                            </div>
+                            
+                            <p>Dues :  Rs 30000</p>
+                                    
+                                    
+                                    
+                                   
+                                   <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">Sl.no</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 411px;" aria-label="Browser: activate to sort column ascending">Installment No</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 373px;" aria-label="Platform(s): activate to sort column ascending">Due Date</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Amount</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="sorting_1">1</td>
+                                            <td class=" ">96345</td>
+                                            <td class=" ">15- Jan -2018</td>
+                                            
+                                            <td class="">Rs.25000</td>
+                                            
+                                        </tr>
+                                       
+                                        <tr class="gradeA even">
+                                        <td class="sorting_1">2</td>
+                                            <td class=" ">56345</td>
+                                            <td class=" ">25- Mar -2018</td>
+                                            
+                                            <td class="">Rs.15000</td>
+                                        </tr>
+                                        </tbody>
+                                </table>
+                               </div>
+                            </div>
+                                   
+                                   
+                                   
+                                   
+                                    
+                                    
+                                    
+                                </div>
+                                
+                                <div class="tab-pane fade" id="trans-inf">
+                                    <h3>Transport Details</h3>
+                                    <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info" >
+                                    
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="">Type of Conveyance    </td>
+                                            <td class=" ">School Bus</td>
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Route No</td>
+                                            <td class=" ">1</td>
+                                            
+                                        </tr>
+                                        
+                                           <tr class="gradeA odd">
+                                            <td class="">Route</td>
+                                            <td class=" ">Puthiyara- Nadakkave</td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Pickup Poin</td>
+                                            <td class=" "></td>
+                                            
+                                        </tr>
+                                        
+                                         <tr class="gradeA odd">
+                                            <td class="">Drop Point</td>
+                                            <td class=" "></td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Vehicle Reg No</td>
+                                            <td class=" "></td>
+                                            
+                                        </tr>
+                                        
+                                         <tr class="gradeA odd">
+                                            <td class="">Contact Person Name</td>
+                                            <td class=" "></td>
+                                            
+                                            
+                                        </tr>
+                                         <tr class="gradeA even">
+                                         <td class="">Contact No</td>
+                                            <td class=" "></td>
+                                            
+                                        </tr>
+                                        
+                                        
+                                        </tbody>
+                                </table>
+                                
+                              </div>
+                            </div>
+                            
+                            
+                            <div>
+                            
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d7825.9251536349!2d75.78393072660533!3d11.264161267966658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3ba65944cb2976ab%3A0xaef0fa516dc945cb!2sPuthiyara%2C+Kozhikode%2C+Kerala!3m2!1d11.2553795!2d75.7960106!4m5!1s0x3ba65ecc944baa8d%3A0x3385d0308c1d76ab!2sNadakkave%2C+Kozhikode%2C+Kerala!3m2!1d11.2725679!2d75.7800259!5e0!3m2!1sen!2sin!4v1512120699876" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                            
+                            
+                            
+                            
+                                </div>
+                                
+                                
+                                
+                                 <div class="tab-pane fade" id="leave">
+                                    <h3>Leaves</h3><br>
+
+                                    <div class="table-responsive">
+                                <div id="no-more-tables">
+                    <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
+                		<thead class="cf">
+                			<tr>
+        						<th> Date</th>
+                				<th>Reason</th>
+                				
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr class="gradeA odd">
+                                    		<td class="">12-05-2017</td>
+                                            <td class="">Fever</td>
+                                            
+                                         
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA even">
+                                    		<td class="">12-05-2017</td>
+                                            <td class="">Fever</td>
+                                            
+                                            
+                                        </tr>
+                                        
+            		</tbody>
+            	</table>
+            </div>
+                            </div>
+                                </div>
+                                
+                                
+                                
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" > Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>            
+ 
+		
+				<footer><p>@2017 All rights are reserved  <a href="">Scientia Innovation Pvt Ltd</a></p>
+
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+    $('#select_all').on('click',function(){
+        if(this.checked){
+            $('.checkbox').each(function(){
+                this.checked = true;
+            });
+        }else{
+             $('.checkbox').each(function(){
+                this.checked = false;
+            });
+        }
+    });
+    
+    $('.checkbox').on('click',function(){
+        if($('.checkbox:checked').length == $('.checkbox').length){
+            $('#select_all').prop('checked',true);
+        }else{
+            $('#select_all').prop('checked',false);
+        }
+    });
+});
+</script>
+    
+	 <script>
+    $('.asd').on('click', function(){
+  $('.wrap, .asd').toggleClass('active');
+  
+  return false;
+});
+</script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    
+  
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+
+  
+    
+    
+    
+    
+    
+    
+    
+
+
+</body>
+
+</html>

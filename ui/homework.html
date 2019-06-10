@@ -1,0 +1,935 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PARENT EYE</title>
+    
+ <style>
+ 
+	
+
+a.button {
+  padding: 11px 11px 13px 13px;
+  outline: none;
+  border-radius: 50%;
+  background: #007fed;
+  color: #fff;
+  font-size: 24px;
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  margin-left: -25px;
+  transition: transform 0.25s;
+}
+a.button:hover {
+  text-decoration: none;
+  background: #2198ff;
+}
+a.button.active {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+
+.action-wid {
+    width: 16% !important;
+    text-align: center;
+}
+.modal{
+	overflow:scroll !important;}
+	</style>
+    
+
+	<link rel="shortcut icon" href="assets/img/favi.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Main Styles-->
+    <link href="assets/css/parenteye-main.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/parenteye-media.css" rel="stylesheet" type="text/css">
+   
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://resources/demos/style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><img src="assets/img/logo.png" class="img-responsive" class="img-responsive"></strong></a>
+            	
+		<div id="sideNav" href="">
+		<i class="fa fa-bars icon"></i> 
+		</div>
+            </div>
+            
+            <div class="col-md-6 head-namer">
+            <h3>St.Mary's English Medium School</h3>    
+            </div>
+
+			
+            <ul class="nav navbar-top-links navbar-right">
+                
+               
+               
+               
+               <li class="tim"> <span id="date_time">Friday August 25 2017 10:22:08</span></li>
+               
+             <!--  <li class="schl-nam"><h3>St.Mary's English Medium School</h3>  </li> -->        
+               
+               
+                <li class="dropdown">
+                
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                       
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+      
+        
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li style="text-align:center;">
+                        <a class="active-menu" href="#" style="text-align:center; background-color:#3e3e3e !important;">Home Work</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="#" href="index.html"><i class="fa fa-sitemap"></i> Communication<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="diary.html">Diary</a>
+                            </li>
+                            <li>
+                                <a href="message.html">Message</a>
+                            </li>
+                            
+                            <li>
+                                <a href="homework.html">Homework</a>
+                            </li>
+                            
+                            <li>
+                                <a href="notice-board.html">Notice Board</a>
+                            </li>
+                            
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Attendance<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="attendance.html">Attenandnace</a>
+                            </li>
+                            <li>
+                                <a href="attendance-report.html">Attendance Report</a>
+                            </li>
+                           
+							</ul>
+						</li>
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Academic<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="mark-entry.html">Markentry</a>
+                            </li>
+                            <li>
+                                <a href="progress-report.html">Progress Report</a>
+                            </li>
+                            <li>
+                                <a href="exam-timetable.html">Exam Time Table</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>School Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="student-management.html">Student Management</a>
+                            </li>
+                            <li>
+                                <a href="class-management.html">Class Management</a>
+                            </li>
+                            
+                             <li>
+                                <a href="staff-management.html">Staff Management</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Fee Managment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                          
+                            <li>
+                                <a href="#">Fee Collection</a>
+                            </li>
+                            
+                             <li>
+                                <a href="#">Reports</a>
+                            </li>
+                             <li>
+                                <a href="#">Set School Fee</a>
+                            </li>
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                         <li>
+                        <a href="transport.html"><i class="fa fa-desktop"></i>  Transport Management  </a>
+                    </li> 
+                    
+                    
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  Export /Import  </a>
+                    </li> 
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  User Management   </a>
+                    </li> 
+                
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+     
+        
+        <div class="header"> 
+        
+        			
+        
+                        <h1 class="page-header">
+                          
+        	<div class="head-mn">
+        	 	<h1>St.Mary's English Medium School</h1>
+        	</div>
+        
+                   
+									
+		</div>
+        
+     
+            <div id="page-inner">
+         
+                <div class="row">
+                
+                	<div class="col-md-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                               
+                               
+                            </div>
+                            
+                            <div class="panel-body">
+                                <div class="list-group text-center frt">
+
+                             
+                                   <h3> Home Work</h3>
+                                   <button type="submit" class="btn btn-default bt-in-s" style="margin-top:20px; float:right;" data-toggle="modal" data-target="#myModal">Create New Homework</button>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                
+                </div>
+                
+             
+                
+               <div class="row">
+                
+                	<div class="col-md-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                               
+                               
+                            </div>
+                            
+                            <div class="panel-body">
+                                <div class="list-group text-center frt">
+                                
+                                <div class="row">
+                                
+                                
+  
+  <div class="col-md-4 ">
+  
+  	
+                        	
+<form>
+                           
+  <div class="form-group">
+    <input class="form-control input-lg" aria-controls="dataTables-example" placeholder="Search Home work " type="search">
+  </div>
+</form> 
+  </div>
+  
+  <div class="col-md-4">
+  <button type="submit" class="btn btn-default bt-in-s input-lg" style="float:left;">Search</button>
+  
+  </div>
+
+  </div>
+                                    
+                                </div>
+                                <div class="text-right">
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="col-md-12 ">
+                        <div class="panel panel-default">
+                        
+                        		
+                             <div class="panel-body">   
+                                
+                                
+                           <div class="table-responsive">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" aria-describedby="dataTables-example_info">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">Class</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 411px;" aria-label="Browser: activate to sort column ascending">Class Teacher</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 373px;" aria-label="Platform(s): activate to sort column ascending">Total Homeworks</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Action</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="sorting_1">III A</td>
+                                            <td class="">Smith K P</td>
+                                            <td class=" ">15 </td>
+                                         
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">VIEW</a> </td>
+                                            
+                                        </tr>
+                                        <tr class="gradeA even">
+                                            <td class="sorting_1">III A</td>
+                                            <td class="">Smith K P</td>
+                                            <td class=" ">15 </td>
+                                            
+                                            <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">VIEW</a></td>
+                                            
+                                        </tr>
+                                        
+                                       <tr class="gradeA odd">
+                                            <td class="sorting_1">III A</td>
+                                            <td class="">Smith K P</td>
+                                            <td class=" ">15 </td>
+                                            
+                                            <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">VIEW</a> </td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA even">
+                                            <td class="sorting_1">IV A</td>
+                                            <td class="">mith K P</td>
+                                            <td class=" ">35 </td>
+                                            
+                                             <td class="action-wid "><a type="button" data-toggle="modal" data-target="#myModalq1" class="btn btn-success">VIEW</a> </td>
+                                            
+                                        </tr>
+                                        
+                                        </tbody>
+                                </table>
+                                
+                                <div class="row">
+                                <div class="col-sm-6"><div class="dataTables_info" id="dataTables-example_info" role="alert" aria-live="polite" aria-relevant="all">Total no of message sent  : 1254</div></div>
+                                
+                                
+                                <div class="col-sm-6 "><div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate"><ul class="pagination pull-right"><li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous"><a href="#">Previous</a></li><li class="paginate_button active" aria-controls="dataTables-example" tabindex="0"><a href="#">1</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">2</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">3</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">4</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">5</a></li><li class="paginate_button " aria-controls="dataTables-example" tabindex="0"><a href="#">6</a></li><li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next"><a href="#">Next</a></li></ul></div></div>
+                                
+                                
+                                </div></div>
+                            </div>  
+                            
+                            </div>   
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                    </div>
+                    
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                  
+                    
+                </div> 
+                
+                
+ 
+                            
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none; z-index:99999999;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+Create New Homework</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        
+                                           <form>
+
+  
+  <div class="form-group">
+    <input class="form-control" id="work" placeholder="Title of Work" type="text">
+  </div>
+  
+  <div class="form-group sel-div">
+ <label style="width:100%;">
+   Select Class
+   </label>
+<select class="lstFruits20"  multiple="multiple">
+    <option value="1">III </option>
+    <option value="2">IV</option>
+    <option value="3">X1</option>
+</select>
+</div>
+
+
+<div class="form-group">
+
+  
+  <label style="width:100%;">
+  Select Student
+   
+   </label>
+   
+<select id="lstFruits1"  multiple="multiple">
+    <option value="1">Asker</option>
+    <option value="2">Raju</option>
+    <option value="3">Muhammed</option>
+   </select>
+  
+  
+  
+</div>
+
+
+  <div class="form-group">
+    <input class="form-control" id="subject" placeholder="Subject" type="text">
+  </div>
+  <div class="form-group">
+  
+ <input class="form-control" id="datepickerqqq" placeholder="Submission Date">
+  </div>
+    <div class="form-group">
+    <input class="form-control" id="WorkDescription" placeholder="Work Description" type="text">
+  </div>
+  
+ <div class="form-group">
+		      <textarea class="form-control " rows="5" id="" name="message" placeholder="Type Reference Here..."></textarea>
+</div>
+  
+  <div class="form-group">
+  <label for="file">Choose file to upload</label>
+   <input type="file" id="file" name="file" multiple>
+  </div>
+  <div class="form-group">
+  <label for="file">Add Video from Youtube</label>
+   <input type="button" id="aaa" name="you" class="btn btn-primary" value="ADD">
+  </div>
+  <div class="form-group">
+  <label for="button">Add reference from Wiki</label>
+   <input type="button" id="aaaad" name="wiki" class="btn btn-primary" value="ADD">
+  </div>
+ 
+</form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Discard </button>
+                                            <button type="button" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                
+                
+                
+                
+   
+   
+   
+   
+
+   
+   
+   
+   <div class="modal fade" id="myModalq1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel">
+
+Home Works
+</h4>
+<button type="submit" class="btn btn-default bt-in-s" style=" " data-toggle="modal" data-target="#myModal">Create New Homework</button>
+        
+      </div>
+      <div class="modal-body">
+      	<div class="row home-tet">
+        	<div class="col-xs-2">
+            	<p>Class:&nbsp;<br>
+<span> IIIA</span></p>
+            </div>
+            <div class="col-xs-3">
+            	<p>Class Teacher:&nbsp;<br>
+ <span>Smitha K P</span></p> 
+            </div>
+            <div class="col-xs-4">
+            	 <p>Total No of students:&nbsp;<br>
+<span>  35</span></p>
+            </div>
+        </div>
+      	<div class="row">
+        
+        
+        
+        <div class="col-md-12">
+        
+        	<div class="table-responsive">
+                                <div id=" dataTables-example_wrapper " class="dataTables_wrapper form-inline" role="grid">
+                                <table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example2" aria-describedby="dataTables-example_info">
+                                    <thead>
+                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 279px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending">Date</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 411px;" aria-label="Browser: activate to sort column ascending">Description</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 373px;" aria-label="Platform(s): activate to sort column ascending">Subject</th>
+                                        <th class="sorting " tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Sub.Date</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">Teacher Name</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 236px;" aria-label="Engine version: activate to sort column ascending">View Attachment</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                         
+                                        
+                                        
+                                    <tr class="gradeA odd">
+                                            <td class="sorting_1">31-9-2017</td>
+                                            <td class="">HomeWork</td>
+                                            <td class=" ">Mathematics</td>
+                                             <td class=" ">5-9-2017</td>
+                                              <td class=" ">Smitha K P</td>
+                                               <td class=" "><button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal1234">View</button><a type="button" data-toggle="modal" data-target="#myModalhomefor" class="btn btn-warning">Forward</a></td>
+                                        </tr>
+                                        <tr class="gradeA even">
+                                           <td class="sorting_1">31-9-2017</td>
+                                            <td class="">HomeWork</td>
+                                            <td class=" ">Mathematics</td>
+                                             <td class=" ">5-10-2017</td>
+                                              <td class=" ">Smitha K P</td>
+                                               <td class=" "><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal1234">View</button><a type="button" data-toggle="modal" data-target="#myModalhomefor" class="btn btn-warning">Forward</a></td>
+                                            
+                                        </tr>
+                                        
+                                       <tr class="gradeA odd">
+                                           <td class="sorting_1">31-9-2017</td>
+                                            <td class="">HomeWork</td>
+                                            <td class=" ">Mathematics</td>
+                                             <td class=" ">5-9-2017</td>
+                                              <td class=" ">Smitha K P</td>
+                                              <td class=" "><button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal1234">View</button><a type="button" data-toggle="modal" data-target="#myModalhomefor" class="btn btn-warning">Forward</a></td>
+                                            
+                                        </tr>
+                                        
+                                        <tr class="gradeA even">
+                                           <td class="sorting_1">31-4-2017</td>
+                                            <td class="">HomeWork</td>
+                                            <td class=" ">Mathematics</td>
+                                             <td class=" ">5-9-2017</td>
+                                              <td class=" ">Smitha K P</td>
+                                              <td class=" "><button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal1234">View</button><a type="button" data-toggle="modal" data-target="#myModalhomefor" class="btn btn-warning">Forward</a></td>
+                                            
+                                        </tr>
+                                        
+                                        </tbody>
+                                </table>
+                                
+                                </div>
+                            </div>
+        
+        </div>
+        	
+        </div>
+      
+        
+        
+      </div>
+      <div class="modal-footer">
+      
+        
+      <!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalhomefor">Forward</button>-->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" > Back</button>
+       
+      </div>
+    </div>
+  </div>
+</div>            
+                
+  
+
+
+
+ <!-- Forward homework start-->
+<div class="modal fade" id="myModalhomefor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Forward Home Work</h4>
+                                        </div>
+                                        <div class="modal-body" style="float:left;">
+                                        
+                                        <div class="tim" style="background-color:transparent; width:100%; float:left;"> <p id="date" style="float:right;"></p></div>
+                                           
+  
+  
+  <form>
+   <div class="form-group sel-div">
+<label style="width:100%;">
+   Select Class 
+   </label>
+   
+<select class="lstFruits20"  multiple="multiple">
+    <option value="1">II </option>
+    <option value="2">III</option>
+</select>
+</div> 
+
+
+<div class="form-group sel-div">
+<label style="width:100%;">
+  Select Student List
+   </label>
+   
+<select class="lstFruits20"  multiple="multiple">
+    <option value="1">Rajesh K V</option>
+    <option value="2">Rashid M</option>
+    <option value="3">Joseph</option>
+   </select>
+
+</div>
+
+
+
+ 
+</form>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-success">Forward</button>
+<button type="button" class="btn btn-primary" data-dismiss="modal">Discard </button>
+<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+    
+</div>
+</div>
+</div>
+</div> 
+
+                
+    <!-- Forward homework end-->          
+                
+ 
+                
+<div id="myModal1234" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Attachments</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+    <object data="sample-pdf-file.pdf" type="application/pdf" width="300" height="200">
+       <b><i class="fa fa-paperclip" aria-hidden="true"></i> PDF Attachment: </b><a href="assets/img/sample-pdf-file.pdf">test.pdf</a>
+    </object>
+</div>
+<div>
+    <object data="#" type="document" width="300" height="200">
+       <b><i class="fa fa-paperclip" aria-hidden="true"></i> Document Attachment: </b><a href="#">test.doc</a>
+    </object>
+</div>
+<div>
+	<p><b><i class="fa fa-paperclip" aria-hidden="true"></i>Attached Image:</b></p>
+	<img src="assets/img/attachment.jpg" style="width:200px;height:auto;">
+</div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>               
+                
+                
+                
+				 
+			 
+		
+				<footer><p>@2017 All rights are reserved  <a href="">Scientia Innovation Pvt Ltd</a></p>
+
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    
+	 <script>
+    $('.asd').on('click', function(){
+  $('.wrap, .asd').toggleClass('active');
+  
+  return false;
+});
+</script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    
+  
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+
+  
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+function date_time(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time');</script>
+ 
+ <script>
+
+function date_time2(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time2("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time2');</script>
+ 
+ 
+ 
+
+ 
+ 
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#datepickerqqq" ).datepicker();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+   
+  <script>
+  $('#myModalq1').on('hidden.bs.modal', function (e) {
+  // do something...
+})
+  </script>
+  
+  
+   <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+    rel="stylesheet" type="text/css" />
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+    type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('.lstFruits20').multiselect({
+            includeSelectAllOption: true,
+			buttonWidth:250,
+			 enableFiltering: true
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function () {
+        $('#lstFruits1').multiselect({
+            includeSelectAllOption: true,
+			buttonWidth:250,
+			 enableFiltering: true
+        });
+    });
+</script>
+
+</script>
+
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+
+ <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+      <!--  <script>
+            $(document).ready(function () {
+                $('#dataTables-example').dataTable();
+            });
+    </script>-->
+      <script>
+            $(document).ready(function () {
+                $('#dataTables-example2').dataTable();
+            });
+    </script>
+
+
+</body>
+
+</html>

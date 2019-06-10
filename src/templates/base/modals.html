@@ -1,0 +1,178 @@
+<!-- Template for "Add Fee Type" modal in "Create structure" page -->
+<template id="fee-type-modal">
+    <transition name="modal">
+        <div  class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container-md">
+                    <div class="modal-header">
+                        <div class="text-center">
+                            <h3><strong>Add New Fee Type</strong></h3>
+                        </div>
+                    </div>
+                    <div   class="modal-body scrollable-panel" id="scrollToBottom" >
+                        <div v-for="(feeType, key) in feeTypeData" class="row vcenter">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-body">
+                                        <div class="col-md-11">
+                                            <form class="form-horizontal">
+                                                <fieldset>
+                                                    <div class="row form-group">
+                                                        <div class="col-md-12">
+                                                            <label class="col-md-4 control-label text-center" for="textinput">Fee Name</label>
+                                                            <div class="col-md-8">
+                                                                <input id="textinput" name="textinput" type="text" placeholder="Fee Name" v-model="feeType.name"
+                                                                    class="form-control input-md">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row form-group">
+                                                        <div class="col-md-12">
+                                                            <label class="col-md-4 control-label text-center" for="textinput">Description</label>
+                                                            <div class="col-md-8">
+                                                                <input id="textinput" name="textinput" type="text" placeholder="Description"
+                                                                    v-model="feeType.description" class="form-control input-md">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div name="Delete" @click="removePanel(key)" class="pull-right"><i title="Delete" class="fa fa-times" style="color: black;"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"></div>
+                            <div class="col-md-2">
+                                <button title="Add new fee type" type="button" class="btn btn-success btn-block" @click="addFeeTypeDet()">
+                                    <i aria-hidden="true" class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="col-md-5"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row" v-if="feeTypeData.length != 0">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-danger btn-block" @click="$emit('close-fee-type')">
+                                    Close
+                                </button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-success btn-block" @click="postFeeType()"> Save </button>
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div v-else>
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-danger btn-block" @click="$emit('close-fee-type')">
+                                    Close
+                                </button>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger text-center" v-if="isSaveErr" role="alert">
+                                    <strong>Error while saving.</strong>
+                                </div>
+                                <div class="alert alert-danger text-center" v-if="isValidationErr" role="alert">
+                                    <strong><% isValidationErr %></strong>
+                                </div>
+                                <div class="alert alert-success text-center" v-if="isSuccess" role="alert">
+                                    <strong><% isSuccess %></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+<!-- END -->
+
+<!-- template for default modal -->
+<template id="modal-template">
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <i v-if="responsetype == 'success'" class="fa fa-check-circle-o "
+                                    style="font-size: 7rem; color: #5cb85c;"></i>
+                                <i v-if="responsetype == 'error'" class="fa fa-times-circle-o"
+                                    style="font-size: 7rem; color: #c9302c;"></i>
+                                <i v-if="responsetype == 'warning'" class="fa fa-exclamation-triangle"
+                                    style="font-size: 7rem; color: #f0ad4e;"></i>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                    <div class="modal-body text-center">
+                        <strong class=""><% responsemsg %></strong>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-block" @click="$emit('close')">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+<!-- template for default modal ends -->
+
+<!-- template for default modal with two buttons -->
+<template id="modal-template-2btn">
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <i v-if="responsetype == 'success'" class="fa fa-check-circle-o "
+                                    style="font-size: 7rem; color: #5cb85c;"></i>
+                                <i v-if="responsetype == 'error'" class="fa fa-times-circle-o"
+                                    style="font-size: 7rem; color: #c9302c;"></i>
+                                <i v-if="responsetype == 'warning'" class="fa fa-exclamation-triangle"
+                                    style="font-size: 7rem; color: #f0ad4e;"></i>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                    <div class="modal-body text-center">
+                        <strong class=""><% responsemsg %></strong>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-block" @click="$emit('close-action')">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-primary btn-block" @click="$emit('proceed-action')">
+                                Proceed
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+<!-- template for default modal ends -->

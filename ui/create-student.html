@@ -1,0 +1,706 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PARENT EYE</title>
+ <style>
+ #trans-inf h3{
+	 margin-bottom:15px;}
+ #fee-inf h3{
+	 margin-bottom:15px;}
+ #academic-inf img{
+	 margin-top:20px;}
+	#dataTables-example2_length{
+		display:none;}
+	.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+}
+
+	
+
+a.button {
+  padding: 11px 11px 13px 13px;
+  outline: none;
+  border-radius: 50%;
+  background: #007fed;
+  color: #fff;
+  font-size: 24px;
+  display: block;
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  top: auto;
+  margin-left: -25px;
+  transition: transform 0.25s;
+}
+a.button:hover {
+  text-decoration: none;
+  background: #2198ff;
+}
+a.button.active {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+.nav-tabs > li > a{
+	background-color:#f36b5b !important;
+	color:#fff;}
+.nav-tabs{
+	border-bottom:none !important;}
+.add-na p{
+	margin:0;
+	padding:0;}
+.name-imag img{
+	width:10%;
+	margin-right:15px;}
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.fren {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}	
+	</style>
+    
+
+	<link rel="shortcut icon" href="assets/img/favi.png" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <!-- Main Styles-->
+    <link href="assets/css/parenteye-main.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/parenteye-media.css" rel="stylesheet" type="text/css">
+   
+    <!-- FontAwesome Styles-->
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet"> 
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://resources/demos/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><strong><img src="assets/img/logo.png" class="img-responsive" class="img-responsive"></strong></a>
+                
+                
+                
+                
+				
+		<div id="sideNav" href="">
+		<i class="fa fa-bars icon"></i> 
+		</div>
+            </div>
+            
+            
+            
+            <div class="col-md-6 head-namer">
+            <h3>St.Mary's English Medium School</h3>    
+            </div>
+
+			
+            <ul class="nav navbar-top-links navbar-right">
+                
+               <li class="tim"> <span id="date_time">Friday August 25 2017 10:22:08</span></li>
+               
+                <li class="dropdown">
+                
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" style="">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                       
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+   
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li style="text-align:center;">
+                        <a class="active-menu" href="#" style="text-align:center; background-color:#3e3e3e !important;">Add New Student</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="#" href="index.html"><i class="fa fa-sitemap"></i> Communication<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="diary.html">Diary</a>
+                            </li>
+                            <li>
+                                <a href="message.html">Message</a>
+                            </li>
+                            
+                            <li>
+                                <a href="homework.html">Homework</a>
+                            </li>
+                            
+                            <li>
+                                <a href="notice-board.html">Notice Board</a>
+                            </li>
+                            
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Attendance<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="attendance.html">Attenandnace</a>
+                            </li>
+                            <li>
+                                <a href="attendance-report.html">Attendance Report</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Academic<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="mark-entry.html">Markentry</a>
+                            </li>
+                            <li>
+                                <a href="progress-report.html">Progress Report</a>
+                            </li>
+                            <li>
+                                <a href="exam-timetable.html">Exam Time Table</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>School Management<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="student-management.html">Student Management</a>
+                            </li>
+                            <li>
+                                <a href="class-management.html">Class Management</a>
+                            </li>
+                            
+                             <li>
+                                <a href="staff-management.html">Staff Management</a>
+                            </li>
+                           
+                            
+							</ul>
+						</li>
+                        
+                        
+                        <li>
+                        <a href="#"><i class="fa fa-sitemap"></i>Fee Managment<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                          
+                            <li>
+                                <a href="#">Fee Collection</a>
+                            </li>
+                            
+                             <li>
+                                <a href="#">Reports</a>
+                            </li>
+                             <li>
+                                <a href="#">Set School Fee</a>
+                            </li>
+                            
+							</ul>
+						</li>
+                        
+                        
+                        
+                         <li>
+                        <a href="transport.html"><i class="fa fa-desktop"></i>  Transport Management  </a>
+                    </li> 
+                    
+                    
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  Export /Import  </a>
+                    </li> 
+                    
+                     <li>
+                        <a href="#"><i class="fa fa-desktop"></i>  User Management   </a>
+                    </li> 
+                   
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+     <div class="header"> 
+        
+        			
+        
+                        <h1 class="page-header">
+                          
+        	<div class="head-mn">
+        	 	<h1>St.Mary's English Medium School</h1>
+        	</div>
+        
+                   
+									
+		</div>
+     
+            <div id="page-inner">
+         
+                <div class="row">
+                
+                	<div class="col-md-12 ">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                               
+                               
+                            </div>
+                            
+                            <div class="panel-body">
+                                <div class="list-group text-center frt">
+
+                             
+                                   <h3>Add New Student</h3>
+
+                                  <br><br>  
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                
+                </div>
+                
+            <div class="row">
+                
+                	
+                    
+
+                 <div class="col-md-12 ">
+                        <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                        <div class="col-md-10"   style="margin-bottom:15px;">
+
+ 
+                                    
+                                   
+                                   
+                                   
+                                  <form>
+<div class="form-group">
+<span id="date_time2"></span>
+</div>
+
+<div class="form-group">
+
+<label style=""> PhotoUpload</label>
+<input type="file" name="pic" accept="image/*">
+</div>
+<div class="form-group">
+<label style=""> Name of Student </label>
+<input class="form-control" id="name" placeholder="Name of Student" type="text">
+</div>
+
+<div class="form-group">
+<label style=""> Gender</label>
+<select class="form-control" id="sel1">
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+ 
+<div class="form-group">
+<label style="">House/Flat Name</label>
+<input class="form-control" id="housename" placeholder="House/Flat Name" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Street Name</label>
+<input class="form-control" id="streetname" placeholder="Street Name" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Location</label>
+<input class="form-control" id="location" placeholder="Location" type="text">
+</div>
+
+<div class="form-group">
+<label style="width:100%;">Date of Birth</label>
+<input class="form-control" id="datepicker" placeholder="date">
+</div>
+
+<div class="form-group">
+<label style="">Name of Father</label>
+<input class="form-control" id="fathername" placeholder="Name of Father" type="text">
+</div>	
+
+<div class="form-group">
+<label style="">Occupation</label>
+<input class="form-control" id="occupation" placeholder="Occupation" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Name Mother</label>
+<input class="form-control" id="mother-name" placeholder="Name Mother" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Name of guardian</label>
+<input class="form-control" id="guardian-name" placeholder="Name of guardian" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Mobile No</label>
+<input class="form-control" id="mob" placeholder="Mobile No" type="text">
+</div>
+
+<div class="form-group">
+<label style="">E-mail address</label>
+<input class="form-control" id="email-add" placeholder="E-mail address" type="text">
+</div>
+
+
+<div class="form-group">
+<label style=""> Nationality</label>
+<select class="form-control" id="sel1">
+<option>Indian</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> State</label>
+<select class="form-control" id="sel1">
+<option>Kerala</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> District</label>
+<select class="form-control" id="sel1">
+<option>Malappuram</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> Religion</label>
+<select class="form-control" id="sel1">
+<option>Hindu</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> Caste</label>
+<select class="form-control" id="sel1">
+<option>Nair</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style=""> Category</label>
+<select class="form-control" id="sel1">
+<option>General</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style="">Aadhar No</label>
+<input class="form-control" id="adhar-no" placeholder="Aadhar No" type="text">
+</div>
+
+<div class="form-group">
+<label style="width:100%;">Date of Admission with year</label>
+<input class="form-control" id="datepicker9" placeholder="date">
+</div>
+
+<div class="form-group">
+<label style=""> Standard of Admission</label>
+<select class="form-control" id="sel1">
+<option>Lorem</option>
+<option>Other</option>
+</select>
+</div>
+
+<div class="form-group">
+<label style="">Previous School Name</label>
+<input class="form-control" id="previus-sch" placeholder="Previous School Name" type="text">
+</div>
+
+<div class="form-group">
+<label style="">Documents</label>
+
+<div class="admi-in-bx">
+	<label style=""> ID Proof</label>
+<input type="file" name="idprf" >
+<label style=""> Previous School documents</label>
+<input type="file" name="prevdoc">
+<label style=""> Passport</label>
+<input type="file" name="passpo">
+<label style=""> Other Documents </label>
+<input type="file" name="other">
+<input type="file" name="other">
+<input type="file" name="other">
+<input type="file" name="other">
+</div>
+
+</div>
+
+
+<div class="form-group">
+<label style="">Identification Marks</label>
+<textarea class="form-control " rows="5" id="" name="idmarks" placeholder="Type Identification Marks..."></textarea>
+</div>
+
+<div class="form-group">
+<button type="button" class="btn btn-primary">Admit</button>&nbsp;<button type="button" class="btn btn-primary">Clear</button>
+</div>
+</form>
+                                 
+                                 </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+          
+                </div> 
+
+               
+ 
+		
+				<footer><p>@2017 All rights are reserved  <a href="">Scientia Innovation Pvt Ltd</a></p>
+
+				</footer>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+	 <script>
+    $('.asd').on('click', function(){
+  $('.wrap, .asd').toggleClass('active');
+  
+  return false;
+});
+</script>
+    <!-- Metis Menu Js -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    
+  
+	
+    <!-- Custom Js -->
+    <script src="assets/js/custom-scripts.js"></script>
+
+  
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+function date_time(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time');</script>
+ 
+ <script>
+
+function date_time2(id)
+{
+        date = new Date;
+        year = date.getFullYear();
+        month = date.getMonth();
+        months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September', 'October', 'November', 'December');
+        d = date.getDate();
+        day = date.getDay();
+        days = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+        h = date.getHours();
+        if(h<10)
+        {
+                h = "0"+h;
+        }
+        m = date.getMinutes();
+        if(m<10)
+        {
+                m = "0"+m;
+        }
+        s = date.getSeconds();
+        if(s<10)
+        {
+                s = "0"+s;
+        }
+        result = ''+days[day]+' '+months[month]+' '+d+' , '+year;
+        document.getElementById(id).innerHTML = result;
+        setTimeout('date_time2("'+id+'");','1000');
+        return true;
+}
+
+</script>
+
+ <script type="text/javascript">window.onload = date_time('date_time2');</script>
+ 
+ 
+ 
+
+ 
+ 
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#datepickerqqq" ).datepicker();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+  <script>
+  $( function() {
+    $( "#datepicker2" ).datepicker();
+  } );
+  </script>
+   
+  <script>
+  $('#myModalq1').on('hidden.bs.modal', function (e) {
+  // do something...
+})
+  </script>
+  
+  
+   <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+    rel="stylesheet" type="text/css" />
+<script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+    type="text/javascript"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('.lstFruits20').multiselect({
+            includeSelectAllOption: true
+        });
+    });
+</script>
+
+</script>
+
+<script>
+n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>
+
+    
+    
+
+
+</body>
+
+</html>

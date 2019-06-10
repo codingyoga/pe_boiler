@@ -1,0 +1,584 @@
+{% extends 'base/header.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+
+<script type="text/x-template" id="grid-template">
+    <div class="scrollbarList250">
+    <table class="table table-striped table-fixed">
+        <thead>
+            
+            <tr style="cursor: pointer;" >
+                <th>Sl:No</th>
+                <th  @click="sortBy('StudentName')" >Name</th>
+                <th  @click="sortBy('Class')">Class</th>
+                <th  @click="sortBy('FatherName')">Father Name</th>
+                <th  @click="sortBy('ContactNumber')">Contact Number</th>
+                <th  @click="sortBy('BookNumber')">Book Number</th>
+                <th  @click="sortBy('AdmissionNumber')">Admission Number</th>
+                <th  @click="sortBy('NetPayable')">Net Payable</th>
+                <th  @click="sortBy('Due')">Due</th>
+                <th  @click="sortBy('Paid')">Paid</th>
+               
+                <!-- <th  @click>
+                    <% key | capitalize %>
+                    <span class="arrow"></span>
+                </th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="entry in filteredStudentsForFeeList "  @click="(entry.NetPayable != null) ? changePage2(entry.id) : ''">
+                <td>
+                    <% entry.Slno %>
+                </td>
+                   <td>
+                    <% entry.StudentName %>
+                </td>
+                <td>
+                    <% entry.Class %>
+                </td>
+                 <td>
+                    <% entry.FatherName %>
+                </td>
+                 <td>
+                    <% entry.ContactNumber %>
+                </td>
+                 <td>
+                    <% entry.BookNumber %>
+                </td>
+                <td>
+                    <% entry.AdmissionNumber %>
+                </td>
+                 <td>
+                    <% entry.NetPayable %>
+                </td>
+                <td>
+                    <% entry.Due %>
+                </td>
+                <td>
+                    <% entry.Paid %>
+                </td>
+              
+            </tr>
+        </tbody>
+
+       </table>
+    </div>
+
+</script>
+<!-- template for modal -->
+<template id="modal-template">
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <i v-if="responsetype == 'success'" class="fa fa-check-circle-o "
+                                    style="font-size: 7rem; color: #5cb85c;"></i>
+                                <i v-if="responsetype == 'error'" class="fa fa-times-circle-o"
+                                    style="font-size: 7rem; color: #c9302c;"></i>
+                                <i v-if="responsetype == 'warning'" class="fa fa-exclamation-triangle"
+                                    style="font-size: 7rem; color: #f0ad4e;"></i>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                    <div class="modal-body text-center">
+                        <strong class=""><% responsemsg %></strong>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-block" @click="$emit('close')">
+                            OK
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+<!-- template for modal ends -->
+<!-- delete template for modal -->
+<template id="delete-modal-template">
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <i v-if="responsetype == 'success'" class="fa fa-check-circle-o "
+                                    style="font-size: 7rem; color: #5cb85c;"></i>
+                                <i v-if="responsetype == 'error'" class="fa fa-times-circle-o"
+                                    style="font-size: 7rem; color: #c9302c;"></i>
+                                <i v-if="responsetype == 'warning'" class="fa fa-exclamation-triangle"
+                                    style="font-size: 7rem; color: #f0ad4e;"></i>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                    <div class="modal-body text-center">
+                        <strong class=""><% responsemsg %></strong>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-block">
+                                Continue
+                            </button>
+                            <button type="button" class="btn btn-danger btn-block" @click="$emit('close')">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+</template>
+<!-- delete template for modal ends -->
+
+<div id="fee_management" v-cloak>
+    <!-- status modal component -->
+    <modal :responsetype="statusModalData.responsetype" :responsemsg="statusModalData.responsemsg"
+        v-if="statusModalData.showModal" @close="statusModalData.showModal = false">
+    </modal>
+    <modal :responsetype="statusModalData1.responsetype1" :responsemsg="statusModalData1.responsemsg"
+        v-if="statusModalData1.showModal" @close="statusModalData1.showModal = false">
+    </modal>
+    <!-- status modal component ends -->
+    <modal-2btn :responsetype="twoBtnModalData.responsetype" :responsemsg="twoBtnModalData.responsemsg" v-if="twoBtnModalData.show2BtnModal" @proceed-action="handleProceedClicked(); twoBtnModalData.show2BtnModal = false;" @close-action="twoBtnModalData.show2BtnModal = false" :responsetype="twoBtnModalData.responsetype"></modal-2btn>
+
+    <!-- Title For fee management -->
+    <div class="row" v-if="page['main']">
+
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                </div>
+                <div class="panel-body">
+                    <div class="list-group text-center frt">
+                        <h3> Fee Management</h3>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Buttons for fee management -->
+    <div class="row" v-if="page['main']">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="list-group text-center std-mgt">
+                        <div class="row">
+                            <div class=" col-sm-12 ">
+                                <div class=" text-center">
+                                    <a @click.once="changePage('create_struture')">
+                                        <div class="fr-bt-box" title="Create Fee Structure">
+                                            <span>Manage Fee Structure</span>
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+                                    <a>
+                                        <div class="fr-bt-box2"title="Other">
+                                            <span>Assign Fee Structure</span>
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Create fee structure -->
+    <div class="row" v-if="page['create_struture']">
+        <div class="col-md-12 ">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="list-group text-center frt">
+                        <a @click.once="changePage('main'); clearFeeStructureData();" class="btn pull-left"> Back</a>
+                        <h3> Fee Structure</h3>
+                        <br><br>
+                        <!-- <div v-if="fee_discount_group < 1" class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+                        <strong>Warning!</strong> No Fee Discount Groups Added
+                        </div> -->
+                       
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" :class="{'active' : createStructureTab.createStructure}" @click="changeFeeStructPage('createStructure')"><a href="#">Create Structure</a></li>
+                        <li role="presentation" :class="{'active' : createStructureTab.editStructure}" @click="changeFeeStructPage('editStructure')"><a href="#">Edit Structure</a></li>
+                    </ul>
+                </div>
+                <div v-if="createStructureTab.createStructure">
+                    <div class="panel-body align-center">
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <div class="btn-group btn-group-justified" role="group">
+                                    <div class="btn-group" role="group">
+                                        <button class="btn btn-primary" @click='showFeeTypeModal = true'><i class="fa fa-tasks"></i> Add New
+                                            Fee
+                                            Type</button>
+                                        <fee-type-modal :existingfeetypes="fee_categories" v-if="showFeeTypeModal" @close-fee-type="showFeeTypeModal = false">
+                                        </fee-type-modal>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                        <br>
+                        <div class="row vcenter">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6 vcenter">
+                                <div class="col-md-4"><label>Structure Name:</label></div>
+                                <div class="col-md-8"><input type="text" class="form-control" v-model="structureName"
+                                        placeholder="Structure Name"></div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <div v-for="(group, groupKey) in createStructure">
+                                <div v-bind:id="groupKey" class="panel panel-anim" @click="focusChange(groupKey)"
+                                    v-bind:class="{'panel-primary' : (groupFocus == groupKey), 'panel-info' : (groupFocus != groupKey) }"
+                                    style="border-radius:10px">
+                                    <div class="panel-heading" style="border-top-right-radius:9px; border-top-left-radius:9px">
+                                        <div class="row vcenter">
+                                            <div class="col-md-5 vcenter">
+                                                <div class="col-md-5"><strong>Fee Group Name: </strong></div>
+                                                <div class="col-md-7 ">
+                                                    <input type="text"
+                                                        :class="(group.name == '' && isSaveStruct) ? ['form-control', 'form-error'] : 'form-control'"
+                                                        v-model="group.name" placeholder="Group Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7 vcenter">
+                                                <div class="col-md-5 vcenter pull-left">
+                                                    <div class="col-md-4">Start Date:</div>
+                                                    <div class="col-md-8">
+                                                        <datepicker placeholder="Start Date"
+                                                            :class="(group.starting_date == '' && isSaveStruct) ? ['form-control', 'form-error'] : 'form-control'"
+                                                            v-model="group.starting_date"></datepicker>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-5 vcenter pull-left">
+                                                    <div class="col-md-4">Due Date:</div>
+                                                    <div class="col-md-8">
+                                                        <datepicker placeholder="Due Date"
+                                                            :class="(group.due_date == '' && isSaveStruct) ? ['form-control', 'form-error'] : 'form-control'"
+                                                            v-model="group.due_date"></datepicker>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button class="btn btn-danger btn-xs pull-right" @click="removeGroup(groupKey)"
+                                                        name="Delete"><i class="fa fa-times" title="Click to delete fee group"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div v-for="(feeType, feeTypeKey) in group.fee_types">
+                                            <div class="row vcenter">
+                                                <div class="col-md-12">
+                                                    <form class="form-horizontal">
+                                                        <!--v-for -->
+                                                        <div class="form-group">
+                                                            <div class="col-sm-8">
+                                                                <div class="col-sm-2">
+                                                                    <label for="inputEmail3" class="control-label">Fee
+                                                                        Name: </label>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <select
+                                                                        :class="(group.fee_types[feeTypeKey].fee_type_id == 0 && isSaveStruct) ? ['form-control', 'form-error'] : 'form-control'"
+                                                                        @input="feeTypeSelect($event, feeTypeKey, groupKey)"
+                                                                        v-model="group.fee_types[feeTypeKey].fee_type_name"
+                                                                        v-bind:id="feeTypeKey">
+                                                                        <option disabled :value="null" selected="selected">
+                                                                            Select fee name</option>
+                                                                        <option :id="category.id" :key="category.id"
+                                                                            v-for="category in fee_categories">
+                                                                            <% category.name %>
+                                                                        </option>
+                                                                    </select>
+                                                                    <!-- <input class="form-control" @input="headerSelect($event, feeTypeKey, key)" v-bind:id="feeTypeKey">
+                                                                                        <option disabled :value="null" selected="selected">Select fee name</option>
+                                                                                        <option :id="category.id" :key="category.id" v-for="category in fee_categories">
+                                                                                                <% category.name %>
+                                                                                        </option>
+                                                                                    </input> -->
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <label class="control-label">Amount:
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-sm-4">
+                                                                    <input type="number"
+                                                                        min="0" onkeypress="allowNumbersOnly(event)"
+                                                                        :class="(group.fee_types[feeTypeKey].amount == 0 && isSaveStruct) ? ['form-control', 'form-error'] : 'form-control'"
+                                                                        v-bind:id="feeTypeKey"
+                                                                        v-model.number="group.fee_types[feeTypeKey].amount"
+                                                                        placeholder="Fee Amount">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-4 vcenter">
+                                                                <div class="col-sm-10">
+                                                                    <multiselect v-model="group.fee_types[feeTypeKey].discount_groups"
+                                                                        :options="fee_discount_group" :multiple="true"
+                                                                        :close-on-select="false" :clear-on-select="false" track-by="id"
+                                                                        label="name" :show-labels="false" :preserve-search="false"
+                                                                        :preselect-first="false" title="Click to select Concession Groups"
+                                                                        placeholder="Concession Group">
+                                                                    </multiselect>
+                                                                </div>
+                                                                <div class="col-sm-2">
+                                                                    <button type="button" class="btn btn-xs btn-danger"
+                                                                        @click="removeFeeType(feeTypeKey, groupKey)"
+                                                                        title="Click to delete Fee Detail"><i class="fa fa-times"
+                                                                            aria-hidden="true"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- v-for-end -->
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-5"></div>
+                                            <div class="col-md-2">
+                                                <button type="button" class="btn btn-success btn-sm btn-block "
+                                                    @click='addFeeType(groupKey)' title="Click to add Fee Detail"><i class="fa fa-plus"
+                                                        aria-hidden="true"></i></button>
+                                            </div>
+                                            <div class="col-md-5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-success btn-circle btn-fab pull-right" @click='addGroup'
+                                    title="Click to add Fee Group"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4" v-if="createStructure.length != 0">
+                                <button type="button" class="btn btn-primary btn-lg btn-block" @click="saveStructure"
+                                    title="Click to Save Structure"><strong>Save</strong></button>
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div v-if="createStructureTab.editStructure">
+                    <!-- Edit Structre Section STARTS -->
+                    <div v-if="createStructureList.length == 0" class="panel-body">
+                        <div class="alert alert-warning" role="alert">There are no <strong>Fee Structures</strong> created.</div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <!-- <div :id="'collapse-'" :class="[(classListIndex !== '') ? 'in' : '', 'panel-collapse collapse']"> -->
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div v-for="(structure, structKey) in createStructureList" class="panel panel-primary" style="border-top-right-radius:9px; border-top-left-radius:9px">
+                                    <div class="panel-heading" style="border-top-right-radius:9px; border-top-left-radius:9px"
+                                        style="padding-bottom:5px; padding-left:8px; padding-right:8px; padding-top:5px;">
+                                        <div class="panel-body" style="padding-bottom: 0px; padding-top: 0px; padding-right: 0px;">
+                                            <div data-toggle="collapse" aria-expanded="false" data-parent="#accordion"
+                                                :href="'#collapse-' + structure.structure_id ">
+                                                <div class="col-md-6 vcenter">
+                                                    <label v-if="currentlyEditingStruct != structure.structure_id"><% structure.structure_name %></label>
+                                                    <input @click="$event.stopPropagation()" v-else type="text" class="form-control"
+                                                        v-model="structure.structure_name" placeholder="Structure Name">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <!-- ; $event.stopPropagation(); -->
+                                                    <button v-if="currentlyEditingStruct != structure.structure_id" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" :href="'#collapse-' + structure.structure_id "
+                                                        @click="handleStructEdit(structure.structure_id, structKey)" title="Edit"
+                                                        class="btn btn-primary pull-right"><i aria-hidden="true" class="fa fa-pencil-square-o"></i></button>
+                                                    <div v-else class="pull-right">
+                                                        <button @click="handleStructEditCancel(); $event.stopPropagation();" title="Cancel Edit"
+                                                            class="btn btn-warning">Cancel</button>
+                                                        <button @click="handleStructEditSave(structKey); $event.stopPropagation();" title="Save Edited Structure"
+                                                            class="btn btn-success">Save</button>
+                                                        <button v-if="!feeTypeCollected" @click="handleStructEditDelete(structure.structure_id); $event.stopPropagation();" title="Delete Structure"
+                                                            class="btn btn-danger">Delete</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div :id="'collapse-' + structure.structure_id " :class="[(structure.structure_id != currentlyEditingStruct) ? 'collapse in' : 'collapse', 'panel-collapse collapse']">
+                                        <div class="panel-body">
+                                            <!-- Collapsable Body STARTS -->
+                                            <div v-for="(structGroup, gKey) in structure.structure" v-bind:id="structGroup.fee_group_id"
+                                                class="panel panel-info" style="border-radius:10px">
+                                                <div class="panel-heading" style="border-top-right-radius:9px; border-top-left-radius:9px">
+                                                    <div class="row vcenter">
+                                                        <div class="col-md-5 vcenter">
+                                                            <div class="col-md-5"><strong>Fee Group Name: </strong></div>
+                                                            <div class="col-md-7">
+                                                                <input v-if="currentlyEditingStruct == structure.structure_id" type="text" class="form-control" v-model="structGroup.fee_group_name"
+                                                                    placeholder="Group Name">
+                                                                <label v-else><% structGroup.fee_group_name %></label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-7 vcenter">
+                                                            <div v-if="currentlyEditingStruct == structure.structure_id" class="col-md-5 vcenter pull-left">
+                                                                <div class="col-md-4">Start Date:</div>
+                                                                <div class="col-md-8">
+                                                                    <datepicker v-if="currentlyEditingStruct == structure.structure_id" class="form-control" placeholder="Start Date"
+                                                                        v-model="structGroup.starting_date"></datepicker>
+                                                                </div>
+                                                            </div>
+                                                            <div v-else class="col-md-5 vcenter pull-left">
+                                                                <div class="col-md-6">Start Date:</div>
+                                                                <div class="col-md-6">
+                                                                    <span class="badge"><% structGroup.starting_date %></span>
+                                                                </div>
+                                                            </div>
+                                                            <div v-if="currentlyEditingStruct == structure.structure_id" class="col-md-5 vcenter pull-left">
+                                                                <div class="col-md-4">Due Date:</div>
+                                                                <div class="col-md-8">
+                                                                    <datepicker v-if="currentlyEditingStruct == structure.structure_id" class= "form-control" placeholder="Due Date" v-model="structGroup.due_date">
+                                                                    </datepicker>
+                                                                </div>
+                                                            </div>
+                                                            <div v-else class="col-md-5 vcenter pull-left">
+                                                                <div class="col-md-6">Due Date:</div>
+                                                                <div class="col-md-6">
+                                                                    <span class="badge"><% structGroup.due_date %></span>
+                                                                </div>
+                                                            </div>
+                                                            <div v-if="(currentlyEditingStruct == structure.structure_id) && !feeTypeCollected" class="col-md-2">
+                                                                <button class="btn btn-danger btn-xs pull-right" @click="editStructGroupDel(structGroup.fee_group_id, structKey, gKey)" name="Delete"><i
+                                                                        class="fa fa-times" title="Click to delete fee group"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div v-for="(feeType, feeTypeKey) in structGroup.fee_types">
+                                                        <div class="row vcenter">
+                                                            <div class="col-md-12">
+                                                                <form class="form-horizontal">
+                                                                    <!-- v-for -->
+                                                                    <div class="form-group">
+                                                                        <div class="col-sm-8 vcenter">
+                                                                            <div class="col-sm-3">
+                                                                                <label for="inputEmail3" class="control-label">Fee Name: </label>
+                                                                            </div>
+                                                                            <div class="col-sm-4">
+                                                                                <select v-if="(currentlyEditingStruct == structure.structure_id) && !structGroup.fee_types[feeTypeKey].collected" :value="feeType.name" class="form-control"
+                                                                                    @input="editFeeTypeSelect($event, feeTypeKey, gKey, structKey)"
+                                                                                    v-bind:id="feeTypeKey">
+                                                                                    <option disabled :value="null" selected="selected">
+                                                                                        Select fee name</option>
+                                                                                    <option :id="category.id" :key="category.id"
+                                                                                        v-for="category in fee_categories">
+                                                                                        <% category.name %>
+                                                                                    </option>
+                                                                                </select>
+                                                                                <label v-else for="inputEmail3" class="control-label"><% feeType.name %></label>
+                                                                            </div>
+                                                                            <div class="col-sm-2">
+                                                                                <label class="control-label">Amount:</label>
+                                                                            </div>
+                                                                            <div class="col-sm-3">
+                                                                                <input v-if="(currentlyEditingStruct == structure.structure_id) && !structGroup.fee_types[feeTypeKey].collected" type="number" min="0" onkeypress="allowNumbersOnly(event)" v-bind:id="feeTypeKey"
+                                                                                class="form-control"
+                                                                                    v-model.number="structGroup.fee_types[feeTypeKey].amount"
+                                                                                    placeholder="Fee Amount">
+                                                                                    <label v-else class="control-label"><% feeType.amount %></label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-4 vcenter">
+                                                                            <div class="col-sm-10">
+                                                                                <multiselect
+                                                                                    v-model="structGroup.fee_types[feeTypeKey].discounts"
+                                                                                    :disabled="(currentlyEditingStruct == structure.structure_id && !structGroup.fee_types[feeTypeKey].collected) ? false :true"
+                                                                                    :options="fee_discount_group" :multiple="true"
+                                                                                    :close-on-select="false" :clear-on-select="false"
+                                                                                    track-by="id" label="name" :show-labels="false"
+                                                                                    :preserve-search="false" :preselect-first="false"
+                                                                                    title="Click to select Concession Groups"
+                                                                                    placeholder="Concession Group">
+                                                                                </multiselect>
+                                                                            </div>
+                                                                            <div v-if="(currentlyEditingStruct == structure.structure_id) && !structGroup.fee_types[feeTypeKey].collected" class="col-sm-2">
+                                                                                <button type="button" class="btn btn-xs btn-danger"
+                                                                                        @click="editStructTypeDel(structGroup.fee_types[feeTypeKey].fee_term_id, structKey, gKey, feeTypeKey)"
+                                                                                        title="Click to delete Fee Detail"><i class="fa fa-times"
+                                                                                        aria-hidden="true"></i></button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- v-for-end -->
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div v-if="currentlyEditingStruct == structure.structure_id" class="row">
+                                                        <div class="col-md-5"></div>
+                                                        <div class="col-md-2">
+                                                            <button type="button" class="btn btn-success btn-sm btn-block"
+                                                                @click='addEditFeeType(gKey)' title="Click to add Fee Detail"><i
+                                                                    class="fa fa-plus" aria-hidden="true"></i></button>
+                                                        </div>
+                                                        <div class="col-md-5"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Collapsable Body ENDS-->
+                                    </div>
+                                    <div v-if="currentlyEditingStruct == structure.structure_id" class="row" style="margin: 0px;">
+                                        <button style="margin: 12px;" type="button" class="btn btn-success btn-sm btn-circle pull-right" @click='addEditFeeGroup(structKey)'
+                                            title="Click to add Fee Detail"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edit Structre Section ENDS -->
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block footer %}
+<script src="{{ url_for('static', filename='vue-js/fee_management.js') }}"></script>
+<!-- test -->
+
+
+{% endblock %}
